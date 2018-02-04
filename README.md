@@ -1,5 +1,5 @@
 ## CrazyE
-    支持 Android 4.4+
+    支持 Android 5.0+
     提供成绩、考试安排、课表的查看
     在使用中遇到bug，请在Issues中提出
 ##### 截图

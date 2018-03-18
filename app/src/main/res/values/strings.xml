@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CrazyE</string>
+    <string name="app_name_demo">CrazyE Demo</string>
+    <string name="app_version">v0.1.0</string>
+    <string name="app_github_url">https://github.com/fullalien/crazyE-android</string>
+    <string name="app_github_release_url">https://github.com/fullalien/crazyE-android/releases</string>
+    <string name="openSourcePro">lottie-android\nAVLoadingIndicatorView</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+</resources>

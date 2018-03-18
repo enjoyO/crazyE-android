@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bai.van.radixe.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/mainFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+            <!--<com.wang.avi.AVLoadingIndicatorView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="150dp"-->
+                <!--style="@style/AVLoadingIndicatorView.Large"-->
+                <!--app:indicatorName="PacmanIndicator"-->
+                <!--app:indicatorColor="@color/tree_poppy"-->
+                <!--android:layout_gravity="center_horizontal"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="加载中....."-->
+                <!--android:textSize="12sp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:textColor="@color/silver_sand"-->
+                <!--android:fontFamily="@font/orchid_pavilion_black"/>-->
+        <!--</LinearLayout>-->
+    </FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/snow_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/navigator_main_click"
+        app:itemTextColor="@drawable/navigator_main_click"/>
+
+</android.support.constraint.ConstraintLayout>

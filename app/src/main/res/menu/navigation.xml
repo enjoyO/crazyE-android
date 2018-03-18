@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/calendar_text"
+        android:title="考试"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/navigation_timetable"
+        android:icon="@drawable/table_large"
+        android:title="课表" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/sticker_emoji"
+        android:title="成绩" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/message_text_outline"
+        android:title="其它" />
+
+</menu>

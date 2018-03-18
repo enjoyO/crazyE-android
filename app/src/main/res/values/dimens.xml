@@ -1,0 +1,19 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="headHeight">50dp</dimen>
+    <dimen name="timeTableLineHeight">0.4dp</dimen>
+    <dimen name="timeTableKnobHeight">50dp</dimen>
+    <dimen name="timeTableKnobTextSize">12sp</dimen>
+    <dimen name="timeTableKnobTimeTextSize">8sp</dimen>
+    <dimen name="timeTableDayTextSize">10sp</dimen>
+    <dimen name="timeTableWeekTextSize">12sp</dimen>
+
+    <dimen name="timeTableDetailTextSizeSmall">15sp</dimen>
+
+    <dimen name="userInfItemWidth">92dp</dimen>
+
+    <dimen name="scoreDetailItemPadding">4dp</dimen>
+</resources>

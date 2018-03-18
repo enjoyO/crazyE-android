@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.bai.van.radixe.LoginActivity"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:background="@color/snow_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Hi"
+                android:fontFamily="@font/novaflat"
+                android:textColor="@color/black"
+                android:textSize="45sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/loginFailedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="70dp"
+                android:textColor="@color/bittersweet"
+                android:gravity="start"
+                android:textSize="12sp"/>
+            <EditText
+                android:id="@+id/userNameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edite_padding_login"
+                android:hint="用户名"
+                android:maxLines="1"
+                android:inputType="number"
+                android:singleLine="true"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/passWordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edite_padding_login"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/verifiCodeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:visibility="gone">
+                    <EditText
+                        android:id="@+id/verifiCodeEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:background="@drawable/edite_padding_login"
+                        android:hint="验证码"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:maxLength="7"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="110dp"
+                        android:textSize="15sp" />
+                    <ImageView
+                        android:id="@+id/verifiCodeImage"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:scaleType="fitCenter"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/verification_code_sample"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/loginAviloading"
+                    style="@style/AVLoadingIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="invisible"
+                    android:layout_marginTop="5dp"
+                    app:indicatorColor="@color/tree_poppy"
+                    app:indicatorName="BallPulseIndicator" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center_horizontal"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/login_button_click"
+                android:text="登 录"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="17sp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="登录即保存密码"
+                    android:textSize="12sp"
+                    android:textColor="@color/silver_sand"
+                    android:gravity="center_horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

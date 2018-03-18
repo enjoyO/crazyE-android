@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/time_table_change_term"
+        android:title="学期选择"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/time_table_currentTerm"
+        android:title="返回当前学期"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/time_table_refresh"
+        android:title="刷新"
+        app:showAsAction="never" />
+</menu>

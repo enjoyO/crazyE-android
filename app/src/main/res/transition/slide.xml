@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slide xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:interpolator="@android:interpolator/decelerate_cubic"
+    android:slideEdge="start"
+    android:duration="200"
+    tools:ignore="UnusedAttribute">
+
+</slide>

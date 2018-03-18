@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="dodger_blue">#2196F3</color>
+    <color name="navy_blue">#1976D2</color>
+    <color name="green_blue">#1564B1</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="flame_pea">#C1614A</color>
+    <color name="burnt_sienna">#E77152</color>
+
+    <color name="blue_bayoux">#5F7481</color>
+    <color name="smalt_blue">#4F616B</color>
+    <color name="mainColor">#607D8B</color>
+    <color name="scondaryColor">#455A64</color>
+
+    <color name="silver_sand">#BBBBBB</color>
+    <color name="bittersweet">#F26D5B</color>
+    <color name="iron">#D6D6D6</color>
+    <color name="portage">#8C94F8</color>
+    <color name="pastel_green">#69DA7E</color>
+    <color name="carmine_pink">#E7493D</color>
+    <color name="violet_blue">#3F51B5</color>
+    <color name="sapphire">#3A499C</color>
+
+    <color name="mountain_meadow">#1AB394</color>
+    <color name="mountain_meadow_af">#18A689</color>
+
+    <color name="concrete">#F2F2F2</color>
+    <color name="snow_white">#FBFBFB</color>
+    <color name="mercury">#E6E6E6</color>
+    <color name="white_smoke">#F6F6F6</color>
+
+    <color name="black">#222222</color>
+    <color name="geyser">#D6DCE6</color>
+    <color name="iceberg">#DBF4F7</color>
+    <color name="white_inpute">#EDEDED</color>
+    <color name="spray">#73DDED</color>
+
+    <color name="aluminum">#999999</color>
+    <color name="tuatara">#444444</color>
+    <color name="dark_gray">#555555</color>
+    <color name="tree_poppy">#FE9225</color>
+
+    <color name="steel">#666666</color>
+    <color name="maya_blue">#79B7F2</color>
+    <color name="mine_shaft">#333333</color>
+
+    <color name="pistachio">#9ACF68</color>
+    <color name="olivine">#9CC16E</color>
+
+    <color name="java">#239E91</color>
+    <color name="medium_sea_green">#31B96E</color>
+    <color name="flamenco">#EA8943</color>
+    <color name="lima">#7ED321</color>
+    <color name="la_rioja">#B2C000</color>
+    <color name="tulip_tree">#DBAB41</color>
+    <color name="mandy">#ED586C</color>
+    <color name="fuchsia_blue">#784DC5</color>
+</resources>

@@ -2,12 +2,14 @@ package com.bai.van.radixe.service;
 
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
 
@@ -90,8 +92,26 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
                 isThisWeek = "[当前周] ";
 
                 NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-                Notification.Builder builder = new Notification.Builder(context);
                 Intent mIntent = new Intent(context, TimeTableItemDetailActivity.class);
+
+                Notification.Builder builder;
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                  Android O Notification
+                    NotificationChannel channel = new NotificationChannel("1",
+                            "Channel1", NotificationManager.IMPORTANCE_DEFAULT);
+                    channel.enableLights(true);
+                    channel.setLightColor(Color.GREEN);
+                    channel.setShowBadge(true);
+
+                    builder = new Notification.Builder(context, "1");
+
+                    if (mNotificationManager != null) {
+                        mNotificationManager.createNotificationChannel(channel);
+                    }
+                }else {
+                    builder = new Notification.Builder(context);
+                }
 
                 mIntent.putExtra("courseName", intent.getStringExtra("courseName"));
                 mIntent.putExtra("dayInWeek", intent.getIntExtra("dayInWeek", -1));
@@ -104,6 +124,7 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
                 builder.setDefaults(Notification.DEFAULT_ALL);
                 builder.setWhen(System.currentTimeMillis());
                 builder.setShowWhen(true);
+                builder.setNumber(3);
                 builder.setContentTitle(intent.getStringExtra("courseName"));
 
                 builder.setContentText(ConstantValues.TIME_TIME_TABLE.get(intent.getIntExtra("minKnob", 0)).concat("-")

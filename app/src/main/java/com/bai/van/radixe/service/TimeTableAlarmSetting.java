@@ -73,6 +73,7 @@ public class TimeTableAlarmSetting {
                     calendar.set(Calendar.HOUR_OF_DAY, ConstantValues.HOUR_TIME_TABLE.get(timeTableInf.minKnob));
                     calendar.set(Calendar.MINUTE, ConstantValues.MINUTE_TIME_TABLE.get(timeTableInf.minKnob));
                     calendar.add(Calendar.MINUTE, -remindInterval);
+//                    calendar.add(Calendar.MINUTE, 209);
 
                     if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);

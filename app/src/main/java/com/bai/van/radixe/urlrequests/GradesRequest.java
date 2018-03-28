@@ -32,12 +32,11 @@ import java.util.List;
  */
 
 public class GradesRequest {
-    public static void getWeu(){
+    private static String getWeUrl(){
+        String weUrl = "";
         HttpURLConnection connection = null;
-        BufferedReader reader = null;
         try {
-            URL url = new URL("http://ehall.ynu.edu.cn/jwapp/sys/czjl/*default/index.do?amp_sec_version_=1" +
-                    "&gid_=Wmc2YWE0c0VrdzJULzdSSU1jYWt1NTRHNG5hdExGa1hRbStOUVNvUk1MNVQweUkwNSt0Z1kzMXl3UU1DM2Fwd0pKcUZRVWNlU3ZXVGpEUzdzTHBEWmc9PQ&EMAP_LANG=zh&THEME=indigo");
+            URL url = new URL("http://ehall.ynu.edu.cn/appShow?appId=4770397878132218");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(8000);
@@ -45,12 +44,54 @@ public class GradesRequest {
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36");
             connection.setRequestProperty("Cookie", LoginData.modAuthCas);
 
+            Log.d("getWeUrl_header", connection.getHeaderFields().toString());
+            weUrl = connection.getHeaderFields().get("Location").get(0);
+            Log.d("WeUrl", weUrl);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null){
+                connection.disconnect();
+            }
+        }
+        return weUrl;
+    }
+
+    public static void getWeu(){
+//        String weUrl = getWeUrl();
+        HttpURLConnection connection = null;
+        try {
+            URL url = new URL("http://ehall.ynu.edu.cn/appShow?appId=4770397878132218");
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(8000);
+            connection.setReadTimeout(8000);
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36");
+            connection.setRequestProperty("Cookie", LoginData.modAuthCas);
+
+            Log.d("Get_WEU_Header", connection.getHeaderFields().toString());
             List<String> cookieStrs = connection.getHeaderFields().get("Set-Cookie");
 
             Log.d("getWeu", cookieStrs.toString());
-            LoginData.weu = cookieStrs.get(1).split(";")[0];
+            for (String str : cookieStrs) {
+                if (str.startsWith("_WEU")) {
+                    for (String string : str.split(";")){
+                        if (string.startsWith("_WEU")){
+                            LoginData.weu = string;
+                        }
+                    }
+                }
+            }
 
-            Log.d("Authority", LoginData.weu);
+
+            Log.d("Authority1", LoginData.weu);
             GradesRequest.getWeuReal();
 
         } catch (MalformedURLException e) {
@@ -62,13 +103,6 @@ public class GradesRequest {
         }catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (reader != null){
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
             if (connection != null){
                 connection.disconnect();
             }

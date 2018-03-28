@@ -170,11 +170,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     }
                     LoginRequest.sendPost(ConstantUrls.LOGIN_ADRESS_URL, username, password + captchas,
                             LoginData.jsessionId + "; " + LoginData.route, LoginData.lt);
-                    try{
-                        Log.d("LOGIN Location", LoginData.location);
-                    }catch (NullPointerException e){
-                        e.printStackTrace();
-                    }
                     if (LoginData.loginResponseCode == ConstantUrls.LOGIN_SUCESS_CODE){
                         saveLoginData(username, password);
                         GradesRequest.getWeu();

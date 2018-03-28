@@ -77,6 +77,8 @@ public class TimeTableRequest {
 //            Log.d("depresed Timetable", UserInformation.timeTableList.toString());
         } catch (JSONException e) {
             e.printStackTrace();
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
     }
     public static void currentWeekNoRequest(){

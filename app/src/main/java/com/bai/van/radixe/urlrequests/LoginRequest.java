@@ -151,6 +151,7 @@ public class LoginRequest {
                     + "&dllt=userNamePasswordLogin&execution=e1s1&_eventId=submit&rmShown=1";
 
             Log.d("sendPost", postString);
+            Log.d("loginCookies", cookie);
 
 
             connections.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -181,6 +182,8 @@ public class LoginRequest {
 
             LoginData.location = connections.getHeaderField("Location");
             LoginData.loginDe = Integer.parseInt(connections.getHeaderField("Content-Length"));
+
+            Log.d("LOGIN Location", LoginData.location);
 
             Log.d("loginCode", connections.getResponseCode() + "");
             if (connections.getResponseCode() == ConstantUrls.LOGIN_SUCESS_CODE){

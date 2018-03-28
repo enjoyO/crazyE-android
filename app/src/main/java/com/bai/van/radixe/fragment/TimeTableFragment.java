@@ -219,11 +219,10 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 textView.setTextColor(getResources().getColor(R.color.white));
                 textView.setClickable(true);
 
-                colorChoPar = (((int) (timeTableInf.className.charAt(0)) % 20) *
-                        (Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 3))) % 10 + 1);
+                colorChoPar = (((int) (timeTableInf.className.charAt(0)) % 20 + 1) *
+                        (Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 3)) % 10 + 1));
 
-                Log.d("classNO", String.valueOf(((int) (timeTableInf.className.charAt(0)) % 20)));
-                Log.d("classNo1", String.valueOf((Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 3))) % 10 + 1));
+                colorChoPar = colorChoPar % 10 + 1;
 
 
                 if (j > 0 && timeTableInf.minKnob == timeTableList.get(i).get(j - 1).minKnob) {

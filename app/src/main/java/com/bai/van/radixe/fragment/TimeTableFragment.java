@@ -206,6 +206,10 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
         CardView cardView;
         RelativeLayout relativeLayout;
 
+        int userNameAttr = Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 1)) + 1;
+
+        userNameAttr = userNameAttr == 10 || userNameAttr == 5 ? 8 : userNameAttr;
+
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < timeTableList.get(i).size(); j++) {
                 timeTableInf = timeTableList.get(i).get(j);
@@ -219,17 +223,15 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 textView.setTextColor(getResources().getColor(R.color.white));
                 textView.setClickable(true);
 
-                colorChoPar = (((int) (timeTableInf.className.charAt(0)) % 20 + 1) *
-                        (Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 3)) % 10 + 1));
 
-                colorChoPar = colorChoPar % 10 + 1;
+
+                colorChoPar = (((int) (timeTableInf.className.charAt(0)) % 20 + 1) * userNameAttr);
+
+                colorChoPar = colorChoPar % 10 + 1 == 10 ? 1 : colorChoPar % 10 + 1;
 
 
                 if (j > 0 && timeTableInf.minKnob == timeTableList.get(i).get(j - 1).minKnob) {
-                    if (currentWeekNo >= timeTableInf.minWeek && currentWeekNo <= timeTableInf.maxWeek
-                            && ((timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_SINGLE && currentWeekNo % 2 == 1)
-                            || (timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_DOUBLE && currentWeekNo % 2 == 0)
-                            || timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_ALL)) {
+                    if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
                         setTextBackground(textView, colorChoPar);
                     } else {
                         continue;
@@ -238,19 +240,13 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 }
 
                 if (j < timeTableList.get(i).size() - 1 && timeTableInf.minKnob == timeTableList.get(i).get(j + 1).minKnob) {
-                    if (currentWeekNo >= timeTableInf.minWeek && currentWeekNo <= timeTableInf.maxWeek
-                            && ((timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_SINGLE && currentWeekNo % 2 == 1)
-                            || (timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_DOUBLE && currentWeekNo % 2 == 0)
-                            || timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_ALL)) {
+                    if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
                         setTextBackground(textView, colorChoPar);
                     }
                     isAddNote = true;
                 }
 
-                if (currentWeekNo >= timeTableInf.minWeek && currentWeekNo <= timeTableInf.maxWeek
-                        && ((timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_SINGLE && currentWeekNo % 2 == 1)
-                        || (timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_DOUBLE && currentWeekNo % 2 == 0)
-                        || timeTableInf.weekHow == ConstantValues.TIMETABLE_WEEK_ALL)) {
+                if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
                     setTextBackground(textView, colorChoPar);
                 } else {
                     setTextBackground(textView, 0);

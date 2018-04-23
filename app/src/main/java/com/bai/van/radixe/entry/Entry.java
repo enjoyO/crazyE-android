@@ -18,12 +18,10 @@ public class Entry {
         public static final String COLOUM_TIME_TABLE_TEACHER = "teacher";
         public static final String COLOUM_TIME_TABLE_WEEK_TIME = "weekTime";
         public static final String COLOUM_TIME_TABLE_CLASS_NO = "classNo";
-        public static final String COLOUM_TIME_TABLE_WEEK_HOW = "weekHow";
         public static final String COLOUM_TIME_TABLE_DAY_IN_WEEK = "dayInWeek";
-        public static final String COLOUM_TIME_TABLE_MIN_WEEK = "minWeek";
-        public static final String COLOUM_TIME_TABLE_MAX_WEEK = "maxWeek";
         public static final String COLOUM_TIME_TABLE_MIN_KNOB = "minKnob";
         public static final String COLOUM_TIME_TABLE_MAX_KNOB = "maxKnob";
+        public static final String COLOUM_TIME_TABLE_WEEK_STR = "weekStr";
 
     }
     public static class SharedPreferencesEntry implements BaseColumns {

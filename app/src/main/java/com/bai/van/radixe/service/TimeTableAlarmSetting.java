@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.bai.van.radixe.constantdata.ConstantValues;
 import com.bai.van.radixe.datastru.TimeTableInf;
+import com.bai.van.radixe.datastru.UserInf;
 import com.bai.van.radixe.entry.Entry;
 import com.bai.van.radixe.sqlite.TimeTableSqliteHandle;
 import com.bai.van.radixe.userdata.UserInformation;
@@ -59,9 +60,7 @@ public class TimeTableAlarmSetting {
                     intent.putExtra("requestCode", i * 10 + j);
                     intent.putExtra("minKnob", timeTableInf.minKnob);
                     intent.putExtra("maxKnob", timeTableInf.maxKnob);
-                    intent.putExtra("minWeek", timeTableInf.minWeek);
-                    intent.putExtra("maxWeek", timeTableInf.maxWeek);
-                    intent.putExtra("weekHow", timeTableInf.weekHow);
+                    intent.putExtra("weekStr", timeTableInf.weekStr);
 
                     calendar = Calendar.getInstance();
                     calendar.setTimeZone(TimeZone.getTimeZone("GMT+8"));
@@ -73,7 +72,7 @@ public class TimeTableAlarmSetting {
                     calendar.set(Calendar.HOUR_OF_DAY, ConstantValues.HOUR_TIME_TABLE.get(timeTableInf.minKnob));
                     calendar.set(Calendar.MINUTE, ConstantValues.MINUTE_TIME_TABLE.get(timeTableInf.minKnob));
                     calendar.add(Calendar.MINUTE, -remindInterval);
-//                    calendar.add(Calendar.MINUTE, 209);
+//                    calendar.add(Calendar.MINUTE, 403);
 
                     if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);

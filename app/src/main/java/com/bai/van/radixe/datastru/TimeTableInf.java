@@ -2,6 +2,8 @@ package com.bai.van.radixe.datastru;
 
 import android.support.annotation.NonNull;
 
+import java.util.Arrays;
+
 /**
  *
  * @author van
@@ -19,16 +21,12 @@ public class TimeTableInf implements Comparable<TimeTableInf>{
 //    public String knobTime;
 //    public String dayInWeekStr;
 
-    public int weekHow = 0;
-
     public int dayInWeek = 0;
-
-
-    public int minWeek = 0;
-    public int maxWeek = 0;
 
     public int minKnob = 0;
     public int maxKnob = 0;
+
+    public String weekStr = "";
 
     @Override
     public int compareTo(@NonNull TimeTableInf timeTableInf) {
@@ -47,12 +45,10 @@ public class TimeTableInf implements Comparable<TimeTableInf>{
                 ", teacher='" + teacher + '\'' +
                 ", weekTime='" + weekTime + '\'' +
                 ", classNo='" + classNo + '\'' +
-                ", weekHow=" + weekHow +
                 ", dayInWeek=" + dayInWeek +
-                ", minWeek=" + minWeek +
-                ", maxWeek=" + maxWeek +
                 ", minKnob=" + minKnob +
                 ", maxKnob=" + maxKnob +
+                ", weekStr='" + weekStr + '\'' +
                 '}';
     }
 }

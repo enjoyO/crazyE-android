@@ -16,6 +16,7 @@ import android.util.Log;
 import com.bai.van.radixe.R;
 import com.bai.van.radixe.TimeTableItemDetailActivity;
 import com.bai.van.radixe.constantdata.ConstantValues;
+import com.bai.van.radixe.constantdata.StaticMethod;
 import com.bai.van.radixe.entry.Entry;
 
 import java.text.SimpleDateFormat;
@@ -79,15 +80,11 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
              * 测试中
              */
 
-            int minWeek = intent.getIntExtra("minWeek", 1);
-            int maxWeek = intent.getIntExtra("maxWeek", 18);
-            int weekHow = intent.getIntExtra("weekHow", 1);
+            String weekStr = intent.getStringExtra("weekStr");
+
             String isThisWeek = "[非当前周] ";
 
-            if (currentWeekNo >= minWeek && currentWeekNo <= maxWeek
-                    && ((weekHow == ConstantValues.TIMETABLE_WEEK_SINGLE && currentWeekNo % 2 == 1)
-                    || (weekHow == ConstantValues.TIMETABLE_WEEK_DOUBLE && currentWeekNo % 2 == 0)
-                    || weekHow == ConstantValues.TIMETABLE_WEEK_ALL)) {
+            if (StaticMethod.isCurrentWeek(currentWeekNo, weekStr)) {
                 // 当前周
                 isThisWeek = "[当前周] ";
 

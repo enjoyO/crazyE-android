@@ -36,20 +36,18 @@ public class TimeTableSqliteHandle {
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_TEACHER, timeTableInf.teacher);
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_TIME, timeTableInf.weekTime);
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_CLASS_NO, timeTableInf.classNo);
-                values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_HOW, timeTableInf.weekHow);
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_DAY_IN_WEEK, timeTableInf.dayInWeek);
-                values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_WEEK, timeTableInf.minWeek);
-                values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_WEEK, timeTableInf.maxWeek);
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_KNOB, timeTableInf.minKnob);
                 values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_KNOB, timeTableInf.maxKnob);
+                values.put(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_STR, timeTableInf.weekStr);
 
                 long newRowId = sqLiteDatabase.insert(Entry.TimeTableEntry.TABLE_NAME, null, values);
 
-                if (newRowId == -1){
-                    Log.d("TimeTableSqliteHandle", "Error with save pet");
-                }else {
-                    Log.d("TimeTableSqliteHandle", "Saved with row id " + newRowId);
-                }
+//                if (newRowId == -1){
+//                    Log.d("TimeTableSqliteHandle", "Error with save pet");
+//                }else {
+//                    Log.d("TimeTableSqliteHandle", "Saved with row id " + newRowId);
+//                }
             }
         }
         sqLiteDatabase.close();
@@ -61,15 +59,14 @@ public class TimeTableSqliteHandle {
                 Entry.TimeTableEntry.COLOUM_TIME_TABLE_TEACHER,
                 Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_TIME,
                 Entry.TimeTableEntry.COLOUM_TIME_TABLE_CLASS_NO,
-                Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_HOW,
                 Entry.TimeTableEntry.COLOUM_TIME_TABLE_DAY_IN_WEEK,
-                Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_WEEK,
-                Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_WEEK,
                 Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_KNOB,
-                Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_KNOB
+                Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_KNOB,
+                Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_STR
         };
 
         SQLiteDatabase sqLiteDatabase = new TimeTableSqliteHelper(context).getWritableDatabase();
+
 
         Cursor cursor = sqLiteDatabase.query(Entry.TimeTableEntry.TABLE_NAME, coloums, null, null, null, null, null);
 
@@ -78,12 +75,10 @@ public class TimeTableSqliteHandle {
         int teacherColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_TEACHER);
         int weekTimeColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_TIME);
         int classNoColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_CLASS_NO);
-        int weekHowColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_HOW);
         int dayInWeekColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_DAY_IN_WEEK);
-        int minWeekColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_WEEK);
-        int maxWeekColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_WEEK);
         int minKnobColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MIN_KNOB);
         int maxKnobColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_MAX_KNOB);
+        int weekStrColumn = cursor.getColumnIndex(Entry.TimeTableEntry.COLOUM_TIME_TABLE_WEEK_STR);
 
         UserInformation.timeTableList = new ArrayList<>();
         for (int i = 0; i < 7; i++){
@@ -98,12 +93,11 @@ public class TimeTableSqliteHandle {
             timeTableInf.weekTime = cursor.getString(weekTimeColumn);
             timeTableInf.classNo = cursor.getString(classNoColumn);
 
-            timeTableInf.weekHow = cursor.getInt(weekHowColumn);
             timeTableInf.dayInWeek = cursor.getInt(dayInWeekColumn);
-            timeTableInf.minWeek = cursor.getInt(minWeekColumn);
-            timeTableInf.maxWeek = cursor.getInt(maxWeekColumn);
             timeTableInf.minKnob = cursor.getInt(minKnobColumn);
             timeTableInf.maxKnob = cursor.getInt(maxKnobColumn);
+
+            timeTableInf.weekStr = cursor.getString(weekStrColumn);
 
             UserInformation.timeTableList.get(timeTableInf.dayInWeek - 1).add(timeTableInf);
         }

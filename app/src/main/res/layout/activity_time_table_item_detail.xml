@@ -170,6 +170,7 @@
                         android:id="@+id/ideaText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="赵娜"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
                         android:textColor="@color/tuatara"

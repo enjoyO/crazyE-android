@@ -54,30 +54,18 @@ public class TimeTableRequest {
                 timeTableInf.minKnob = Integer.parseInt(jsonObjectClass.getString("KSJC"));
                 timeTableInf.maxKnob = Integer.parseInt(jsonObjectClass.getString("JSJC"));
 
-
-                if (timeTableInf.weekTime.split("\\(").length > 1){
-                    if ("双".equals(timeTableInf.weekTime.split("\\(")[1].replace(")", ""))){
-                        timeTableInf.weekHow = ConstantValues.TIMETABLE_WEEK_DOUBLE;
-                    }else {
-                        timeTableInf.weekHow = ConstantValues.TIMETABLE_WEEK_SINGLE;
-                    }
-                }else {
-                    timeTableInf.weekHow = ConstantValues.TIMETABLE_WEEK_ALL;
-                }
-
-                timeTableInf.minWeek = Integer.parseInt(timeTableInf.weekTime.split("-")[0]);
-                timeTableInf.maxWeek = Integer.parseInt(timeTableInf.weekTime.split("-")[1].split("周")[0]);
+                timeTableInf.weekStr = jsonObjectClass.getString("SKZC");
 
                 UserInformation.timeTableList.get(timeTableInf.dayInWeek - 1).add(timeTableInf);
+
 
             }
             for (int i = 0; i < UserInformation.timeTableList.size(); i++){
                 Collections.sort(UserInformation.timeTableList.get(i));
             }
 //            Log.d("depresed Timetable", UserInformation.timeTableList.toString());
+
         } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
     }

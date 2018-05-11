@@ -728,6 +728,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 break;
             case 7:
                 textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_tuliptree));
+                break;
             case 8:
                 textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_lima));
                 break;

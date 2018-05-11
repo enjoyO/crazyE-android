@@ -1,13 +1,19 @@
 package com.bai.van.radixe;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bai.van.radixe.baseclass.BaseActivity;
+
+import java.util.Objects;
 
 /**
  * @author van
@@ -25,10 +31,12 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener{
         RelativeLayout aboutBack = findViewById(R.id.aboutBack);
         LinearLayout githubViewLayout = findViewById(R.id.githubUrlLayout);
         LinearLayout appVersionLayout = findViewById(R.id.appVersionLayout);
+        LinearLayout feedbackLayout = findViewById(R.id.feedbackLayout);
 
         aboutBack.setOnClickListener(this);
         githubViewLayout.setOnClickListener(this);
         appVersionLayout.setOnClickListener(this);
+        feedbackLayout.setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +51,10 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener{
             case R.id.appVersionLayout:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.app_github_release_url))));
                 break;
+            case R.id.feedbackLayout:
+                ((ClipboardManager) Objects.requireNonNull(getSystemService(Context.CLIPBOARD_SERVICE)))
+                        .setPrimaryClip(ClipData.newPlainText("QQGROUP", "782011508"));
+                Toast.makeText(this, "QQ群号已复制到剪切板", Toast. LENGTH_SHORT).show();
             default:
         }
     }

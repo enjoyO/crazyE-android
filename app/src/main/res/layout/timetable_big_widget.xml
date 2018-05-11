@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/widget_bakground_snow_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/headHeight_widget"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/weekMonth_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="1月"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/weekLayout0_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周一"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate0_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:text="16日"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout1_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周二"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate1_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout2_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周三"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate2_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout3_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周四"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate3_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout4_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周五"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate4_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout5_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周六"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate5_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekLayout6_widget"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周日"
+                    android:textSize="@dimen/timeTableWeekTextSize_widget"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weekDate6_widget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/timeTableDayTextSize_widget"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/timeTableLineHeight"
+                android:background="@color/mercury"
+                android:layout_alignParentTop="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="08:30"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="09:25"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="10:30"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="11:25"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="14:00"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="6"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="14:55"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="7"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="16:00"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="8"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="16:55"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="9"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="19:00"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="19:55"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="11"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="21:00"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableKnobHeight_widget"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="21:55"
+                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                android:textStyle="bold"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/timeTableLineHeight"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/mercury"/>
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="@dimen/timeTableLineHeight"
+                        android:layout_height="match_parent"
+                        android:background="@color/mercury"/>
+
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout0_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout1_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout2_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout3_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout4_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout5_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/weekDisplayLayout6_widget"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout >

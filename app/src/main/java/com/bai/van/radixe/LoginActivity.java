@@ -43,6 +43,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private AVLoadingIndicatorView loginAvi;
     private EditText userNameEdit, passWordEdit;
     private Button loginButton;
+    private TextView gottrouble_text;
 
     public static EditText  verifiCodeEdit;
     private TextView loginFailedText;
@@ -101,12 +102,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         passWordEdit = (EditText) findViewById(R.id.passWordEdit);
         verifiCodeEdit = (EditText) findViewById(R.id.verifiCodeEdit);
 
+        gottrouble_text = (TextView) findViewById(R.id.gottrouble_login);
+
         userNameEdit.setOnFocusChangeListener(this);
         passWordEdit.setOnFocusChangeListener(this);
         verifiCodeEdit.setOnFocusChangeListener(this);
 
         loginButton.setOnClickListener(this);
         verifiCodeImage.setOnClickListener(this);
+        gottrouble_text.setOnClickListener(this);
 
         readLoginData();
         userNameEdit.setText(username);
@@ -133,6 +137,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                         LoginRequest.requestCaptcha();
                     }
                 });
+                break;
+            case R.id.gottrouble_login:
+                startActivity(new Intent(this, AboutActivity.class));
+                overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
                 break;
             default:
         }

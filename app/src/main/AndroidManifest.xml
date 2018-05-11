@@ -72,5 +72,16 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".widget.TableBigWidgetProvider"
+            android:label="课程表-大">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/table_big_widget_provider" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.seewo.homewidgets.action.CLICK" />
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>

@@ -11,6 +11,16 @@
     <dimen name="timeTableDayTextSize">10sp</dimen>
     <dimen name="timeTableWeekTextSize">12sp</dimen>
 
+    <dimen name="headHeight_widget">30dp</dimen>
+    <dimen name="timeTableWeekTextSize_widget">10sp</dimen>
+    <dimen name="timeTableDayTextSize_widget">8sp</dimen>
+    <dimen name="timeTableKnobHeight_widget">35dp</dimen>
+    <dimen name="timeTableKnobTextSize_widget">10sp</dimen>
+    <dimen name="timeTableKnobTimeTextSize_widget">7sp</dimen>
+
+    <dimen name="timeTableKnobMargin_widget_big">2dp</dimen>
+
+
     <dimen name="timeTableDetailTextSizeSmall">15sp</dimen>
 
     <dimen name="userInfItemWidth">92dp</dimen>

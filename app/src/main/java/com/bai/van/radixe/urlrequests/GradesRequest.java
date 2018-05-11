@@ -5,6 +5,7 @@ import android.util.Log;
 import com.bai.van.radixe.constantdata.ConstantUrls;
 import com.bai.van.radixe.constantdata.StaticMethod;
 import com.bai.van.radixe.datastru.ExamScoreInf;
+import com.bai.van.radixe.datastru.UserInf;
 import com.bai.van.radixe.userdata.LoginData;
 import com.bai.van.radixe.userdata.UserInformation;
 
@@ -187,8 +188,9 @@ public class GradesRequest {
             for (int i = 0; i < UserInformation.userSemesterList.size(); i++){
                 UserInformation.userSemesterDeList.add(StaticMethod.semesterTran(UserInformation.userSemesterList.get(i)));
             }
+//            Log.d("exam score", UserInformation.examScoreInfList.toString());
             Log.d("semester", UserInformation.userSemesterList.toString());
-            Log.d("semester", UserInformation.userSemesterDeList.toString());
+            Log.d("semesterDe", UserInformation.userSemesterDeList.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }

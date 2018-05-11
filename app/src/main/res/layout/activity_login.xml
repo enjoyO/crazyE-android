@@ -76,7 +76,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical">
                 <RelativeLayout
                     android:id="@+id/verifiCodeLayout"
@@ -84,6 +83,7 @@
                     android:layout_height="35dp"
                     android:layout_marginEnd="50dp"
                     android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
                     android:visibility="gone">
                     <EditText
                         android:id="@+id/verifiCodeEdit"
@@ -109,6 +109,25 @@
                         android:src="@drawable/verification_code_sample"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:gravity="end">
+                    <TextView
+                        android:id="@+id/gottrouble_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="遇到问题？"
+                        android:textColor="@drawable/gottrouble_textcolor_selector"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
                 <com.wang.avi.AVLoadingIndicatorView
                     android:id="@+id/loginAviloading"
                     style="@style/AVLoadingIndicatorView"
@@ -120,7 +139,6 @@
                     app:indicatorColor="@color/tree_poppy"
                     app:indicatorName="BallPulseIndicator" />
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/loginButton"
@@ -150,7 +168,6 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="20dp"/>
             </RelativeLayout>
-
         </LinearLayout>
 
     </LinearLayout>

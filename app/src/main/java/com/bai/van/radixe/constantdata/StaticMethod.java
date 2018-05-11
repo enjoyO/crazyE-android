@@ -38,53 +38,58 @@ public class StaticMethod {
             e.printStackTrace();
         }
 
-        switch (dValue){
-            case 0:
-                if ("秋".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大一 上学期";
-                }
-                break;
-            case 1:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大一 下学期";
-                }else {
-                    resultStr = "大二 上学期";
-                }
-                break;
-            case 2:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大二 下学期";
-                }else {
-                    resultStr = "大三 上学期";
-                }
-                break;
-            case 3:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大三 下学期";
-                }else {
-                    resultStr = "大四 上学期";
-                }
-                break;
-            case 4:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大四 下学期";
-                }else {
-                    resultStr = "大五 上学期";
-                }
-                break;
-            case 5:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大五 下学期";
-                }else {
-                    resultStr = "大六 上学期";
-                }
-                break;
-            case 6:
-                if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
-                    resultStr = "大六 下学期";
-                }
-            default:
+        try {
+            switch (dValue){
+                case 0:
+                    if ("秋".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大一 上学期";
+                    }
+                    break;
+                case 1:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大一 下学期";
+                    }else {
+                        resultStr = "大二 上学期";
+                    }
+                    break;
+                case 2:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大二 下学期";
+                    }else {
+                        resultStr = "大三 上学期";
+                    }
+                    break;
+                case 3:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大三 下学期";
+                    }else {
+                        resultStr = "大四 上学期";
+                    }
+                    break;
+                case 4:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大四 下学期";
+                    }else {
+                        resultStr = "大五 上学期";
+                    }
+                    break;
+                case 5:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大五 下学期";
+                    }else {
+                        resultStr = "大六 上学期";
+                    }
+                    break;
+                case 6:
+                    if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
+                        resultStr = "大六 下学期";
+                    }
+                default:
+            }
+        }catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
         }
+
         return resultStr;
     }
 }

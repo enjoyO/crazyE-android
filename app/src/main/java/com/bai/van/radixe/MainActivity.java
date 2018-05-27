@@ -20,6 +20,7 @@ import android.view.Window;
 
 import com.bai.van.radixe.baseclass.BaseActivity;
 import com.bai.van.radixe.baseclass.BottomNavigationViewHelper;
+import com.bai.van.radixe.datastru.UserInf;
 import com.bai.van.radixe.fragment.ExamScoreFragment;
 import com.bai.van.radixe.fragment.ExamScoreRecyclerViewFragment;
 import com.bai.van.radixe.fragment.MessageFragment;
@@ -28,6 +29,7 @@ import com.bai.van.radixe.fragment.TimeTableFragment;
 import com.bai.van.radixe.urlrequests.GradesRequest;
 import com.bai.van.radixe.userdata.LoginData;
 import com.bai.van.radixe.userdata.UserInformation;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
@@ -126,6 +128,8 @@ public class MainActivity extends BaseActivity implements
 
         examScoreFragment = new ExamScoreFragment();
         otherFragement = new OtherFragment();
+
+        MobclickAgent.onProfileSignIn(UserInformation.username);
     }
 
     @Override

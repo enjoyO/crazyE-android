@@ -8,12 +8,20 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_ap"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/MainActivityTheme">
+        android:theme="@style/MainActivityTheme"
+        android:name=".App">
+
+        <meta-data android:value="5b096c09a40fa356c90002b3" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="v-crazye-v0.3.0" android:name="UMENG_CHANNEL"/>
+
         <activity
             android:name=".StartActivity"
             android:screenOrientation="portrait"

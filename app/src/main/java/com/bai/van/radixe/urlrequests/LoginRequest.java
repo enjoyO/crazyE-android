@@ -67,9 +67,9 @@ public class LoginRequest {
             Document doc = Jsoup.parse(response.toString());
             Element form = doc.getElementsByTag("form").get(0);
 
-            Log.d("lt = ", form.select("input[name=lt]").get(0).val());
-            Log.d("execution = ", form.select("input[name=execution]").get(0).val());
-            Log.d("_eventId = ", form.select("input[name=_eventId]").get(0).val());
+//            Log.d("lt = ", form.select("input[name=lt]").get(0).val());
+//            Log.d("execution = ", form.select("input[name=execution]").get(0).val());
+//            Log.d("_eventId = ", form.select("input[name=_eventId]").get(0).val());
 
             LoginData.lt = form.select("input[name=lt]").get(0).val();
 
@@ -109,7 +109,7 @@ public class LoginRequest {
 
             List<String> cookieStrs = connection.getHeaderFields().get("Set-Cookie");
             LoginData.modAuthCas = cookieStrs.get(0).split(";")[0];
-            Log.d("MOD_", LoginData.modAuthCas);
+//            Log.d("MOD_", LoginData.modAuthCas);
 
 //            for (String str : connection.getHeaderFields().keySet()) {
 //                System.out.println(str + "=" + connection.getHeaderFields().get(str));
@@ -150,8 +150,8 @@ public class LoginRequest {
                     + "&lt=" + lt
                     + "&dllt=userNamePasswordLogin&execution=e1s1&_eventId=submit&rmShown=1";
 
-            Log.d("sendPost", postString);
-            Log.d("loginCookies", cookie);
+//            Log.d("sendPost", postString);
+//            Log.d("loginCookies", cookie);
 
 
             connections.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -183,9 +183,9 @@ public class LoginRequest {
             LoginData.location = connections.getHeaderField("Location");
             LoginData.loginDe = Integer.parseInt(connections.getHeaderField("Content-Length"));
 
-            Log.d("LOGIN Location", LoginData.location);
-
-            Log.d("loginCode", connections.getResponseCode() + "");
+//            Log.d("LOGIN Location", LoginData.location);
+//
+//            Log.d("loginCode", connections.getResponseCode() + "");
             if (connections.getResponseCode() == ConstantUrls.LOGIN_SUCESS_CODE){
                 LoginData.loginResponseCode = ConstantUrls.LOGIN_SUCESS_CODE;
                 LoginRequest.getModAuthCas();
@@ -273,7 +273,7 @@ public class LoginRequest {
             }
 
             LoginData.ifNeedCaptcha = response.toString();
-            Log.d("LOGIN", "needCaptcha? " + LoginData.ifNeedCaptcha);
+//            Log.d("LOGIN", "needCaptcha? " + LoginData.ifNeedCaptcha);
 
             LoginActivity.loginHandler.post(new Runnable() {
                 @Override

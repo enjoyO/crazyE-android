@@ -1,5 +1,5 @@
 
-<img src="screenshot/display-img-1.png">
+![screenshot1](screenshot/display-img-1.PNG)
 
 ### 使用的开源项目
 * [lottie-android](https://github.com/fullalien/lottie-android)  

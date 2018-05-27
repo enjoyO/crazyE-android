@@ -39,6 +39,23 @@ public class TableBigWidgetProvider extends AppWidgetProvider {
         }
         SharedPreferences sharedPreferences = context.getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         int currentWeekNo = sharedPreferences.getInt(Entry.SharedPreferencesEntry.CURRENT_WEEK_NO, 1);
+        long currentWeekTimeInMile = sharedPreferences.getLong(Entry.SharedPreferencesEntry.CURRENT_WEEK_TIMEINMILLIS, 0);
+
+        int weekDif = (int) ((System.currentTimeMillis() - currentWeekTimeInMile) / 604800000);
+
+        if (weekDif >= 1) {
+            currentWeekNo += weekDif;
+            sharedPreferences.edit().putInt(Entry.SharedPreferencesEntry.CURRENT_WEEK_NO, currentWeekNo).apply();
+
+            Calendar calendarTemp = Calendar.getInstance();
+            calendarTemp.add(Calendar.DAY_OF_MONTH, -((week + 5) % 7));
+            calendarTemp.set(Calendar.HOUR_OF_DAY, 0);
+            calendarTemp.set(Calendar.MINUTE, 0);
+            calendarTemp.set(Calendar.MILLISECOND, 0);
+            calendarTemp.set(Calendar.SECOND, 0);
+
+            sharedPreferences.edit().putLong(Entry.SharedPreferencesEntry.CURRENT_WEEK_TIMEINMILLIS, calendarTemp.getTimeInMillis()).apply();
+        }
 
         String userName = sharedPreferences.getString(Entry.SharedPreferencesEntry.USER_NAME, "");
         int userNameAttr = 1;

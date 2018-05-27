@@ -4,6 +4,8 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 
+import com.umeng.analytics.MobclickAgent;
+
 /**
  *
  * @author van
@@ -18,5 +20,17 @@ public class BaseActivity extends AppCompatActivity {
         config.setToDefaults();
         res.updateConfiguration(config,res.getDisplayMetrics() );
         return res;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

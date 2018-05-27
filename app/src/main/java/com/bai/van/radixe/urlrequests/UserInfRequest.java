@@ -110,7 +110,7 @@ public class UserInfRequest {
             UserInformation.userInf.baseIdCardNO = jsonObjectInf.getString("SFZJH");
             UserInformation.userInf.baseIdCardType = jsonObjectInf.getString("SFZJLXDM_DISPLAY");
 
-            Log.d("UserInf", UserInformation.usernameChar);
+//            Log.d("UserInf", UserInformation.usernameChar);
 
             UserInfRequest.requestUserStatusInf();
             UserInfRequest.requestUserEntranInf();
@@ -145,8 +145,8 @@ public class UserInfRequest {
             UserInformation.userInf.rollIsHaveRoll = jsonObjectInf.getString("XJZTDM_DISPLAY");
 
 
-            Log.d("UserInf", UserInformation.userAcademy);
-            Log.d("UserInf", UserInformation.userMajor);
+//            Log.d("UserInf", UserInformation.userAcademy);
+//            Log.d("UserInf", UserInformation.userMajor);
 
         } catch (JSONException | NullPointerException e) {
             e.printStackTrace();
@@ -235,7 +235,7 @@ public class UserInfRequest {
             }
             UserInformation.examInScheduleList.removeAll(UserInformation.examScheduledFinishList);
             UserInformation.examInScheduleList.removeAll(UserInformation.examScheduledUnfinishList);
-            Log.d("InSchedule Size", UserInformation.examInScheduleList.size() + "");
+//            Log.d("InSchedule Size", UserInformation.examInScheduleList.size() + "");
 //            Log.d("InSchedule", UserInformation.examInScheduleList.toString());
         } catch (JSONException e) {
             e.printStackTrace();

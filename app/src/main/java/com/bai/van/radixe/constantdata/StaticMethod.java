@@ -13,7 +13,7 @@ import com.bai.van.radixe.userdata.UserInformation;
 
 public class StaticMethod {
     public static boolean isCurrentWeek(int currentWeekNo, String weekStr){
-        if (currentWeekNo < weekStr.length()){
+        if (currentWeekNo <= weekStr.length()){
             if ('1' == weekStr.charAt(currentWeekNo - 1)){
                 return true;
             }else {

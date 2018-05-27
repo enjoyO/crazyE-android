@@ -94,7 +94,7 @@ public class TimeTableRequest {
 
             UserInformation.currentWeekNo = jsonObjectInf.getInt("ZC");
 
-            Log.d("currentWeekNoRequest", UserInformation.currentWeekNo + "");
+//            Log.d("currentWeekNoRequest", UserInformation.currentWeekNo + "");
 
             UserInfRequest.requestUserStatusInf();
         } catch (JSONException e) {

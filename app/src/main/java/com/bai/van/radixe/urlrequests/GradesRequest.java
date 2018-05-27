@@ -49,7 +49,7 @@ public class GradesRequest {
 //            Log.d("Get_WEU_Header", connection.getHeaderFields().toString());
             List<String> cookieStrs = connection.getHeaderFields().get("Set-Cookie");
 
-            Log.d("getWeu", cookieStrs.toString());
+//            Log.d("getWeu", cookieStrs.toString());
             for (String str : cookieStrs) {
                 if (str.startsWith("_WEU")) {
                     for (String string : str.split(";")){
@@ -61,7 +61,7 @@ public class GradesRequest {
             }
 
 
-            Log.d("Authority1", LoginData.weu);
+//            Log.d("Authority1", LoginData.weu);
             GradesRequest.getWeuReal();
 
         } catch (MalformedURLException e) {
@@ -97,7 +97,7 @@ public class GradesRequest {
                     LoginData.weuReal = string.split(";")[0];
                 }
             }
-            Log.d("Authority", LoginData.weuReal);
+//            Log.d("Authority", LoginData.weuReal);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -122,8 +122,8 @@ public class GradesRequest {
             UserInformation.currentTerm = jsonObjectInf.getString("DM");
             UserInformation.currentTermChar = jsonObjectInf.getString("MC");
 
-            Log.d("currentTerm", UserInformation.currentTerm);
-            Log.d("currentTermChar", UserInformation.currentTermChar);
+//            Log.d("currentTerm", UserInformation.currentTerm);
+//            Log.d("currentTermChar", UserInformation.currentTermChar);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -181,16 +181,16 @@ public class GradesRequest {
                 }
                 UserInformation.examScoreInfList.add(examScoreInf);
             }
-            Log.d("Grades size", UserInformation.examScoreInfList.size() + "");
-            Log.d("Semester size", UserInformation.userSemesterList.size() + "");
+//            Log.d("Grades size", UserInformation.examScoreInfList.size() + "");
+//            Log.d("Semester size", UserInformation.userSemesterList.size() + "");
             Collections.reverse(UserInformation.userSemesterList);
 
             for (int i = 0; i < UserInformation.userSemesterList.size(); i++){
                 UserInformation.userSemesterDeList.add(StaticMethod.semesterTran(UserInformation.userSemesterList.get(i)));
             }
 //            Log.d("exam score", UserInformation.examScoreInfList.toString());
-            Log.d("semester", UserInformation.userSemesterList.toString());
-            Log.d("semesterDe", UserInformation.userSemesterDeList.toString());
+//            Log.d("semester", UserInformation.userSemesterList.toString());
+//            Log.d("semesterDe", UserInformation.userSemesterDeList.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }

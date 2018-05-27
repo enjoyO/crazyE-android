@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CrazyE</string>
-    <string name="app_name_demo">CrazyE Demo</string>
-    <string name="app_version">v0.3.0-beta</string>
+    <string name="app_name_demo">CrazyE-Demo</string>
+    <string name="app_version">v0.3.1</string>
     <string name="app_github_url">https://github.com/fullalien/crazyE-android</string>
     <string name="app_github_release_url">https://github.com/fullalien/crazyE-android/releases</string>
     <string name="openSourcePro">lottie-android\nAVLoadingIndicatorView</string>

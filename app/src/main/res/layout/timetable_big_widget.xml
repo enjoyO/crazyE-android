@@ -212,334 +212,367 @@
                         android:orientation="vertical"
                         android:layout_weight="0.5">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="1"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="08:30"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="08:30"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
-
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:orientation="horizontal">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="2"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="2"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="09:25"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="09:25"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="3"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="3"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10:30"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="10:30"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="4"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="4"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="11:25"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="11:25"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
-
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="5"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="14:00"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="14:00"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
-
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="6"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="6"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="14:55"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="14:55"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="7"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="7"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="16:00"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="16:00"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="8"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="8"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="16:55"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="16:55"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
-
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_vertical|center_horizontal"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="9"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="9"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="19:00"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="19:00"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="10"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="19:55"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="19:55"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="11"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="11"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="21:00"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="21:00"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
-
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableKnobHeight_widget"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
-                            <TextView
+                            android:layout_height="@dimen/timeTableKnobHeight_widget">
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="12"
-                                android:textSize="@dimen/timeTableKnobTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="12"
+                                    android:textSize="@dimen/timeTableKnobTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="21:55"
+                                    android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
+                                    android:textStyle="bold"
+                                    android:gravity="center_horizontal"/>
+                            </LinearLayout>
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="21:55"
-                                android:textSize="@dimen/timeTableKnobTimeTextSize_widget"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"/>
-                        </LinearLayout>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/timeTableLineHeight"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/mercury"/>
-
+                                android:layout_height="@dimen/timeTableLineHeight"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/mercury"/>
+                        </RelativeLayout>
 
                     </LinearLayout>
                     <TextView

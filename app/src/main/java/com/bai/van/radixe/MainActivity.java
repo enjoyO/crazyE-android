@@ -14,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.Window;
@@ -30,6 +31,8 @@ import com.bai.van.radixe.urlrequests.GradesRequest;
 import com.bai.van.radixe.userdata.LoginData;
 import com.bai.van.radixe.userdata.UserInformation;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.inapp.IUmengInAppMsgCloseCallback;
+import com.umeng.message.inapp.InAppMessageManager;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
@@ -130,6 +133,17 @@ public class MainActivity extends BaseActivity implements
         otherFragement = new OtherFragment();
 
         MobclickAgent.onProfileSignIn(UserInformation.username);
+
+
+        InAppMessageManager.getInstance(this).setInAppMsgDebugMode(true);
+        InAppMessageManager.getInstance(this).showCardMessage(this, "main",
+                new IUmengInAppMsgCloseCallback() {
+                    //插屏消息关闭时，会回调该方法
+                    @Override
+                    public void onColse() {
+                        Log.i("UMENG", "card message close");
+                    }
+                });
     }
 
     @Override

@@ -25,8 +25,10 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 
@@ -189,6 +191,8 @@ public class UserInfRequest {
             JSONObject jsonObjectWdksap = jsonObjectDatas.getJSONObject("wdksap");
             JSONArray jsonArrayRows = jsonObjectWdksap.getJSONArray("rows");
 
+            Calendar calendar = Calendar.getInstance();
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             for (int i = 0; i < jsonArrayRows.length(); i++){
                 ExamInf examInf = new ExamInf();
                 JSONObject jsonObjectExam = jsonArrayRows.getJSONObject(i);
@@ -198,7 +202,12 @@ public class UserInfRequest {
                 examInf.times = jsonObjectExam.getString("KSSJMS");
                 examInf.id = jsonObjectExam.getString("KCH");
 
-                if (dateSmallThanNow(examInf.times.split(" ")[0])){
+                calendar.setTime(df.parse(examInf.times.split(" ")[0]));
+
+                examInf.timesWeek = "周".concat(ConstantValues.DAY_IN_WEEK_CHAR.get(((calendar.get(Calendar.DAY_OF_WEEK) + 5) % 7)));
+
+
+                if (dateSmallThanNow(examInf.times.split(" ")[0].concat(" ").concat(examInf.times.split(" ")[1].split("-")[0]))){
                     UserInformation.examScheduledFinishList.add(examInf);
                 }else {
                     UserInformation.examScheduledUnfinishList.add(examInf);
@@ -210,6 +219,8 @@ public class UserInfRequest {
 //            UserInformation.examScheduledUnfinishList = UserInformation.examScheduledFinishList;
 
         } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 
@@ -313,7 +324,7 @@ public class UserInfRequest {
         return returnStr;
     }
     public static boolean dateSmallThanNow(String dateStr) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         try {
             Date date = df.parse(dateStr);
             Date now = new Date();

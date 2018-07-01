@@ -57,6 +57,7 @@ public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapte
                 holder.examType.setText(dataList.get(position).type);
                 holder.examTime.setText(dataList.get(position).times);
                 holder.examAdress.setText(dataList.get(position).address);
+                holder.examTimeWeek.setText(dataList.get(position).timesWeek);
             }
             if (dataType == ConstantValues.EXAM_SCHEDULE_UNFINISHE){
                 holder.examName.setText(dataList.get(position).name);
@@ -68,6 +69,8 @@ public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapte
                 holder.examTime.setTextColor(context.getResources().getColor(R.color.mine_shaft));
                 holder.examAdress.setTextColor(context.getResources().getColor(R.color.mine_shaft));
                 holder.examType.setBackground(context.getResources().getDrawable(R.drawable.my_exam_information_ksmc_blue));
+                holder.examTimeWeek.setBackground(context.getResources().getDrawable(R.drawable.my_exam_information_ksmc_treepoly));
+                holder.examTimeWeek.setText(dataList.get(position).timesWeek);
             }
             if (position == (dataList.size() - 1)){
                 holder.examFootColor.setBackgroundColor(context.getResources().getColor(R.color.snow_white));
@@ -81,7 +84,7 @@ public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapte
     }
 
     public static class ViewHolderExamSchedule extends RecyclerView.ViewHolder {
-        public TextView examName, examAdress, examTime, examType, examFootColor;
+        public TextView examName, examAdress, examTime, examTimeWeek, examType, examFootColor;
         public ImageView examIcon;
 
         public TextView examInScheduleNo, examInSCheduleName, examInScheduleId;
@@ -96,6 +99,7 @@ public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapte
                 examName = (TextView) itemView.findViewById(R.id.examScheduleNameText);
                 examAdress = (TextView) itemView.findViewById(R.id.examScheduleAddressText);
                 examTime = (TextView) itemView.findViewById(R.id.examScheduleTimeText);
+                examTimeWeek = (TextView) itemView.findViewById(R.id.examScheduleTimeWeekText);
                 examType = (TextView) itemView.findViewById(R.id.examScheduleTypeText);
                 examFootColor = (TextView) itemView.findViewById(R.id.examScheduleFootColor);
                 examIcon = (ImageView) itemView.findViewById(R.id.examScheduleIcon);

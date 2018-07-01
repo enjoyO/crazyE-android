@@ -19,6 +19,7 @@ public class ExamInf implements Comparable<ExamInf>{
     public String times = "";
     public String address = "";
     public String id = "";
+    public String timesWeek = "";
 
     @Override
     public boolean equals(Object o) {
@@ -45,6 +46,7 @@ public class ExamInf implements Comparable<ExamInf>{
                 ", times='" + times + '\'' +
                 ", address='" + address + '\'' +
                 ", id='" + id + '\'' +
+                ", timesWeek='" + timesWeek + '\'' +
                 '}';
     }
 

@@ -1,4 +1,4 @@
-# CrazyE-Android    [![gitHub release](https://img.shields.io/github/release/fullalien/crazyE-android.svg?style=social)](https://github.com/fullalien/crazyE-android/releases) [![license](https://img.shields.io/cran/l/devtools.svg)](https://github.com/fullalien/crazyE-android/blob/master/LICENSE)
+# CrazyE-Android    [![gitHub release](https://img.shields.io/github/release/fullalien/crazyE-android.svg?style=flat)](https://github.com/fullalien/crazyE-android/releases) [![license](https://img.shields.io/cran/l/devtools.svg)](https://github.com/fullalien/crazyE-android/blob/master/LICENSE)
 
 <img src="screenshot/display-img-1.png">
 

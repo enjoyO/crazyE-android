@@ -12,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bai.van.radixe.baseclass.BaseActivity;
-
 import java.util.Objects;
 
 /**

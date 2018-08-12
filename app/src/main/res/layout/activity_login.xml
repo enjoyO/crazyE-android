@@ -22,8 +22,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_marginBottom="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="60dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Hi"
                 android:fontFamily="@font/novaflat"
@@ -36,43 +36,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="70dp"
+                android:layout_marginEnd="65dp"
+                android:layout_marginStart="65dp"
                 android:textColor="@color/bittersweet"
                 android:gravity="start"
                 android:textSize="12sp"/>
             <EditText
                 android:id="@+id/userNameEdit"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/edite_padding_login"
                 android:hint="用户名"
                 android:maxLines="1"
+                android:textColor="@color/dove_gray"
                 android:inputType="number"
                 android:singleLine="true"
-                android:paddingStart="20dp"
+                android:paddingStart="25dp"
                 android:paddingEnd="20dp"
-                android:textSize="15sp" />
-
-
+                android:textSize="15sp"
+                android:textStyle="bold"/>
             <EditText
                 android:id="@+id/passWordEdit"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edite_padding_login"
                 android:hint="密码"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:textColor="@color/dove_gray"
                 android:singleLine="true"
-                android:paddingStart="20dp"
+                android:paddingStart="25dp"
                 android:paddingEnd="20dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
@@ -80,24 +83,26 @@
                 <RelativeLayout
                     android:id="@+id/verifiCodeLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_marginEnd="50dp"
-                    android:layout_marginStart="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginStart="45dp"
                     android:layout_marginTop="10dp"
                     android:visibility="gone">
                     <EditText
                         android:id="@+id/verifiCodeEdit"
                         android:layout_width="match_parent"
-                        android:layout_height="35dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/edite_padding_login"
                         android:hint="验证码"
                         android:inputType="text"
                         android:maxLines="1"
+                        android:textColor="@color/dove_gray"
                         android:singleLine="true"
                         android:maxLength="7"
-                        android:paddingStart="20dp"
+                        android:paddingStart="25dp"
                         android:paddingEnd="110dp"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
                     <ImageView
                         android:id="@+id/verifiCodeImage"
                         android:layout_width="80dp"
@@ -106,6 +111,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginEnd="20dp"
+                        android:layout_centerVertical="true"
                         android:src="@drawable/verification_code_sample"
                         android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
@@ -143,10 +149,10 @@
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="46dp"
                 android:layout_marginBottom="25dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginTop="40dp"
                 android:layout_gravity="center_horizontal"
                 style="?android:attr/borderlessButtonStyle"
@@ -169,7 +175,5 @@
                     android:layout_marginBottom="20dp"/>
             </RelativeLayout>
         </LinearLayout>
-
     </LinearLayout>
-
 </RelativeLayout>

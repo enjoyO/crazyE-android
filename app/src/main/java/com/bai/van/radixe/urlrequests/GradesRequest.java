@@ -46,7 +46,8 @@ public class GradesRequest {
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36");
             connection.setRequestProperty("Cookie", LoginData.modAuthCas);
 
-//            Log.d("Get_WEU_Header", connection.getHeaderFields().toString());
+            Log.d("modAuthCas", LoginData.modAuthCas);
+            Log.d("Get_WEU_Header", connection.getHeaderFields().toString());
             List<String> cookieStrs = connection.getHeaderFields().get("Set-Cookie");
 
 //            Log.d("getWeu", cookieStrs.toString());
@@ -119,6 +120,7 @@ public class GradesRequest {
             JSONObject jsonObjectDqxnxq = jsonObjectData.getJSONObject("dqxnxq");
             JSONArray jsonArray = jsonObjectDqxnxq.getJSONArray("rows");
             JSONObject jsonObjectInf = (JSONObject) jsonArray.get(0);
+
             UserInformation.currentTerm = jsonObjectInf.getString("DM");
             UserInformation.currentTermChar = jsonObjectInf.getString("MC");
 
@@ -147,7 +149,7 @@ public class GradesRequest {
                 JSONObject jsonObjectExam = jsonArrayRows.getJSONObject(i);
 
                 examScoreInf.examName = jsonObjectExam.getString("KCM");
-                examScoreInf.examScore = jsonObjectExam.getString("ZCJ").split("\\.")[0];
+                examScoreInf.examScore = jsonObjectExam.getString("ZCJ");
                 examScoreInf.examGpa = jsonObjectExam.getString("XFJD");
                 examScoreInf.examCredit = jsonObjectExam.getString("XF");
                 examScoreInf.examSemeter = jsonObjectExam.getString("XNXQDM_DISPLAY");

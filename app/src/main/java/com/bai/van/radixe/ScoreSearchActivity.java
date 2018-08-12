@@ -1,5 +1,6 @@
 package com.bai.van.radixe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -11,7 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bai.van.radixe.adapters.ExamScoreRecyclerViewAdapter;
+import com.bai.van.radixe.adapters.ExamScoreRecyclerViewHolder;
 import com.bai.van.radixe.baseclass.BaseActivity;
+import com.bai.van.radixe.constantdata.SharedData;
+import com.bai.van.radixe.constantdata.StaticMethod;
 import com.bai.van.radixe.datastru.ExamScoreInf;
 import com.bai.van.radixe.userdata.UserInformation;
 
@@ -83,7 +87,20 @@ public class ScoreSearchActivity extends BaseActivity implements
 
         layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
 
-        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(null, new ArrayList<ExamScoreInf>());
+        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(null, new ArrayList<ExamScoreInf>(), null);
+        examScoreRecyclerViewAdapter.sign = true;
+
+        examScoreRecyclerViewAdapter.setOnItemClickListener(new ExamScoreRecyclerViewHolder.RecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                SharedData.examScoreInf = examScoreRecyclerViewAdapter.mScoreData.get(position - 1);
+
+                ExamScoreRecyclerViewHolder examScoreRecyclerViewHolder = (ExamScoreRecyclerViewHolder) scoreSearchResultRecyclerView.getChildViewHolder(view);
+                Intent intent = new Intent(ScoreSearchActivity.this, ExamScoreDetailActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
 
         scoreSearchResultRecyclerView.setLayoutManager(layoutManager);
         scoreSearchResultRecyclerView.setAdapter(examScoreRecyclerViewAdapter);
@@ -96,9 +113,7 @@ public class ScoreSearchActivity extends BaseActivity implements
 
     private void buildData(String filterStr){
         List<ExamScoreInf> dataFilterList = new ArrayList<>();
-        ExamScoreInf examScoreInf;
-        for (int i = 0; i < UserInformation.examScoreInfList.size(); i++){
-            examScoreInf = UserInformation.examScoreInfList.get(i);
+        for (ExamScoreInf examScoreInf : UserInformation.examScoreInfList){
             if (!"".equals(filterStr)){
                 if ((isMajorBaseSel && examScoreInf.examType.contains(majorBaseText))
                         || (isMajorOptionalSel && examScoreInf.examType.contains(majorOptionalText))
@@ -202,6 +217,18 @@ public class ScoreSearchActivity extends BaseActivity implements
 
     @Override
     public void afterTextChanged(Editable editable) {
-        buildData(scoreSearchEditText.getText().toString());
+        String textIn = scoreSearchEditText.getText().toString();
+
+        if (textIn.startsWith("#") && !"#".equals(textIn)) {
+            List<ExamScoreInf> dataFilterList = new ArrayList<>();
+            for (ExamScoreInf examScoreInf : UserInformation.examScoreInfList) {
+                if (StaticMethod.semesterTran(examScoreInf.examSemeter).replace(" ", "").contains(textIn.replace("#", ""))) {
+                    dataFilterList.add(examScoreInf);
+                }
+            }
+            refreshRecyclerView(dataFilterList);
+        }else {
+            buildData(scoreSearchEditText.getText().toString());
+        }
     }
 }

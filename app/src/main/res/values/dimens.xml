@@ -21,9 +21,11 @@
     <dimen name="timeTableKnobMargin_widget_big">2dp</dimen>
 
 
-    <dimen name="timeTableDetailTextSizeSmall">15sp</dimen>
+    <dimen name="timeTableDetailTextSizeSmall">13sp</dimen>
 
-    <dimen name="userInfItemWidth">92dp</dimen>
+    <dimen name="userInfItemWidth">95dp</dimen>
 
     <dimen name="scoreDetailItemPadding">4dp</dimen>
+
+    <dimen name="labelCorner">8dp</dimen>
 </resources>

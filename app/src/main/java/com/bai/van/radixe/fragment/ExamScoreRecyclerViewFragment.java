@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.bai.van.radixe.ExamScoreDetailActivity;
 import com.bai.van.radixe.adapters.ExamScoreRecyclerViewAdapter;
 import com.bai.van.radixe.adapters.ExamScoreRecyclerViewHolder;
+import com.bai.van.radixe.constantdata.SharedData;
 import com.bai.van.radixe.datastru.ExamScoreInf;
 import com.bai.van.radixe.R;
 import com.bai.van.radixe.userdata.UserInformation;
@@ -91,16 +92,17 @@ public class ExamScoreRecyclerViewFragment extends Fragment {
 
         layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
 
-        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(examScoreRecyclerViewFragment, buildScoreData());
+        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(examScoreRecyclerViewFragment, buildScoreData(), tabSelectedSign);
 
         examScoreRecyclerViewAdapter.setOnItemClickListener(new ExamScoreRecyclerViewHolder.RecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                SharedData.examScoreInf = examScoreRecyclerViewAdapter.mScoreData.get(position - 1);
+
                 ExamScoreRecyclerViewHolder examScoreRecyclerViewHolder = (ExamScoreRecyclerViewHolder) recyclerView.getChildViewHolder(view);
                 Intent intent = new Intent(getActivity(), ExamScoreDetailActivity.class);
-                intent.putExtra("examScoreName", examScoreRecyclerViewHolder.examName.getText().toString());
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 

@@ -49,27 +49,7 @@ public class StartActivity extends BaseActivity {
 
         isNetworkConnected = isNetworkConnected(this);
 
-
         lottieAnimationView = (LottieAnimationView) findViewById(R.id.startAcivityLottieView);
-
-        lottieAnimationView.addAnimatorListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
 
         if (isAutoLogin && !"".equals(UserInformation.username) && !"".equals(UserInformation.password)){
             new Thread(new Runnable() {
@@ -99,9 +79,26 @@ public class StartActivity extends BaseActivity {
 
             }).start();
         }else {
-            startActivity(new Intent(StartActivity.this, LoginActivity.class));
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            finish();
+            lottieAnimationView.addAnimatorListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animator) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animator) {
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animator) {
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animator) {
+                    startActivity(new Intent(StartActivity.this, LoginActivity.class));
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
+                }
+            });
         }
     }
 

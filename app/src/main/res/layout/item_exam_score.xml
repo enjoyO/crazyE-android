@@ -1,45 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="3dp"
+    android:layout_height="70dp"
     android:background="@color/snow_white">
-
-    <!--<android.support.v7.widget.CardView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_marginStart="0dp"-->
-    <!--android:layout_marginEnd="0dp"-->
-    <!--android:background="@color/white"-->
-    <!--app:cardBackgroundColor="@color/snow_white"-->
-    <!--android:foreground="?android:attr/selectableItemBackground"-->
-    <!--app:cardCornerRadius="0dp"-->
-    <!--app:cardElevation="0dp">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/item_score_circle_background_top_right"/>
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/item_score_circle_background_top_left"/>
+        <View
+            android:layerType="software"
+            android:layout_width="match_parent"
+            android:layout_height="2.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/dash_line" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/item_score_circle_background_bottom_right"/>
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/item_score_circle_background_bottom_left"/>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foreground="?android:attr/selectableItemBackground"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
             android:layout_marginStart="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
 
             <TextView
                 android:id="@+id/examScoreValue"
-                android:layout_width="60dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="871"
+                android:text="99.0"
                 android:textColor="@color/bittersweet"
-                android:textSize="34sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -53,7 +74,6 @@
                     android:layout_height="35dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="2dp"
                     android:gravity="center_vertical"
                     android:maxLines="2"
                     android:text="毛泽东思想和中国特色社会主义理论体系概论(上)"
@@ -71,6 +91,7 @@
                         android:id="@+id/examScoreGpa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="绩点：3.7"
                         android:textColor="@color/steel"
                         android:textSize="13sp" />
@@ -79,6 +100,7 @@
                         android:id="@+id/examScoreCredit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginStart="15dp"
                         android:text="学分：3"
                         android:textColor="@color/steel"
@@ -89,26 +111,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
+                        android:layout_gravity="center_vertical"
                         android:background="@drawable/card_score_type_text_background"
-                        android:paddingEnd="1.5dp"
-                        android:paddingStart="1.5dp"
+                        android:paddingEnd="2dp"
+                        android:paddingStart="2dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
                         android:text="学科基础"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/examScoreSemester"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:maxLines="1"
-                    android:text="2017学年 秋季学期"
-                    android:textColor="@color/aluminum"
-                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <!--</android.support.v7.widget.CardView>-->
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

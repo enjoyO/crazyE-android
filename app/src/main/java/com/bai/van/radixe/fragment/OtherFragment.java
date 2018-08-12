@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bai.van.radixe.AboutActivity;
 import com.bai.van.radixe.MainActivity;
 import com.bai.van.radixe.R;
 import com.bai.van.radixe.ScoreAnalyseActivity;

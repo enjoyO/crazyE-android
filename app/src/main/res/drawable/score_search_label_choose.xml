@@ -8,11 +8,8 @@
             <solid
                 android:color="@color/tree_poppy"/>
             <corners
-                android:radius="5dp"
+                android:radius="0dp"
                 />
-            <stroke
-                android:width="0.1dp"
-                android:color="@color/tree_poppy"/>
         </shape>
     </item>
 </layer-list>

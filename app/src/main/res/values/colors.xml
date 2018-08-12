@@ -60,4 +60,11 @@
     <color name="tulip_tree">#DBAB41</color>
     <color name="mandy">#ED586C</color>
     <color name="fuchsia_blue">#784DC5</color>
+
+    <color name="bastille">#E1E1E1</color>
+    <color name="light_coral">#F17D80</color>
+    <color name="zircon">#E1E1E1</color>
+
+    <color name="dove_gray">#757575</color>
+    <color name="time_table_text">#333333</color>
 </resources>

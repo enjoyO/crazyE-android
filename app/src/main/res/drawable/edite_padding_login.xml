@@ -8,7 +8,7 @@
             <solid
                 android:color="@color/white_inpute"/>
             <corners
-                android:radius="22dp"
+                android:radius="20dp"
                 />
             <stroke
                 android:width="0.5px"

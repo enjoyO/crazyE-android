@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,242 +7,217 @@
     android:layout_height="match_parent"
     tools:context="com.bai.van.radixe.ExamScoreDetailActivity"
     android:orientation="vertical"
-    android:background="@color/snow_white">
+    android:background="#DDDEDEDE">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stateListAnimator="@animator/score_appbar_elevation">
-        <LinearLayout
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/mainColor"
+            android:layout_height="10dp">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:rotation="90"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:rotation="180"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <View
+                android:layerType="software"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_height="2.1dp"
+                android:background="@drawable/dash_line_black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:rotation="180"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:rotation="180"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:rotation="180"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:rotation="180"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:rotation="180"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/examNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center_horizontal"
+            android:lines="1"
+            android:text="毛泽东思想和中国特色社会主义理论体系概论(上)"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
-            <RelativeLayout
-                android:id="@+id/examScoreDetailBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="2.5dp"
-                android:layout_marginStart="2.5dp"
-                android:layout_marginEnd="2.5dp"
-                android:background="@drawable/score_search_back_click"
-                android:clickable="true"
-                android:focusable="true">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_back"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"/>
-            </RelativeLayout>
             <TextView
-                android:layout_width="0.4dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
-                android:background="@color/scondaryColor"/>
+                android:id="@+id/examScoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="已出"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:background="@drawable/item_score_head_label_backgroun_mandy"/>
             <TextView
+                android:id="@+id/examGpaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="周一 1-2节"
+                android:textSize="13sp"
                 android:textColor="@color/white"
-                android:text="成绩详情"
-                android:textSize="16sp"
-                android:fontFamily="@font/orchid_pavilion_black"/>
+                android:background="@drawable/item_score_head_label_background_lima"/>
+            <TextView
+                android:id="@+id/examCreditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="周一 1-2节"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:background="@drawable/item_score_head_label_background_dodgerblue"/>
         </LinearLayout>
-    </android.support.design.widget.AppBarLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:rotation="-90"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <View
+                android:layerType="software"
+                android:layout_width="match_parent"
+                android:layout_height="1.4dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/dash_line_black_small" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:rotation="90"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:rotation="180"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:id="@+id/examNameText"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="毛泽东思想和中国特色社会主义理论体系概论(上)"
-                android:textSize="19sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/orchid_pavilion_black"
-                android:padding="5dp"
-                android:background="@color/white_inpute"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="总成绩"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examScoreText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="79"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/bittersweet"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="10dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="绩点"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examGpaText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2.9"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/tuatara"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="10dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="学分"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examCreditText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/tuatara"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:background="@color/concrete">
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="平时"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examUsualPerformanceText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/tuatara"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                    <TextView
-                        android:id="@+id/examUsualPerformanceRatioText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="3dp"
-                        android:gravity="bottom"
-                        android:text="20%"
-                        android:textSize="12sp"
-                        android:textColor="@color/steel"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginStart="10dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="期中"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -267,31 +242,59 @@
                         android:layout_marginStart="3dp"
                         android:gravity="bottom"
                         android:text="20%"
-                        android:textSize="12sp"
+                        android:textSize="11sp"
                         android:textColor="@color/steel"/>
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="平时"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/aluminum"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="0dp"/>
+                    <TextView
+                        android:id="@+id/examUsualPerformanceText"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/tuatara"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/examUsualPerformanceRatioText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="3dp"
+                        android:gravity="bottom"
+                        android:text="20%"
+                        android:textSize="11sp"
+                        android:textColor="@color/steel"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:padding="@dimen/scoreDetailItemPadding"
+                    android:layout_weight="0.5">
+                    <TextView
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="期末"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -321,19 +324,14 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="10dp"
+                    android:paddingStart="5dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="及格"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -352,21 +350,21 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/concrete">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginStart="10dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="学时"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -385,67 +383,15 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
+                    android:paddingStart="5dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="学期"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examSemesterText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2017学年 秋季学期"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/tuatara"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="修读方式"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -464,20 +410,21 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginStart="10dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="有效"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -496,59 +443,15 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
+                    android:paddingStart="5dp"
                     android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_weight="0.5">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="类型"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/aluminum"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="0dp"/>
-                    <TextView
-                        android:id="@+id/examTypeText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="综合素质教育选修"
-                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
-                        android:textColor="@color/tuatara"
-                        android:fontFamily="@font/orchid_pavilion_black"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="10dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="性质"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -568,26 +471,83 @@
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
             </LinearLayout>
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/concrete">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:padding="@dimen/scoreDetailItemPadding">
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="类型"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/aluminum"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="0dp"/>
+                    <TextView
+                        android:id="@+id/examTypeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="综合素质教育选修"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/tuatara"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_marginStart="10dp"
+                    android:padding="@dimen/scoreDetailItemPadding">
                     <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="学期"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/aluminum"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="0dp"/>
+                    <TextView
+                        android:id="@+id/examSemesterText"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2017学年 秋季学期"
+                        android:textSize="@dimen/timeTableDetailTextSizeSmall"
+                        android:textColor="@color/tuatara"
+                        android:fontFamily="@font/orchid_pavilion_black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/concrete">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:padding="@dimen/scoreDetailItemPadding">
+                    <TextView
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="开课单位"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -607,26 +567,19 @@
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
             </LinearLayout>
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/white">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="5dp"
-                    android:padding="@dimen/scoreDetailItemPadding"
-                    android:background="@color/white_inpute">
-                    <!--<ImageView-->
-                    <!--android:layout_width="20dp"-->
-                    <!--android:layout_height="20dp"-->
-                    <!--android:layout_gravity="center_vertical"-->
-                    <!--android:src="@drawable/ic_building"/>-->
+                    android:layout_marginStart="10dp"
+                    android:padding="@dimen/scoreDetailItemPadding">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:text="考试时间"
                         android:textSize="@dimen/timeTableDetailTextSizeSmall"
@@ -648,6 +601,95 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:rotation="-90"
+                android:background="@drawable/item_score_circle_background_one_corner"/>
+            <View
+                android:layerType="software"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="2.2dp"
+                android:background="@drawable/dash_line_black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/item_score_circle_background_black"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/examScoreDetailBack"
+        android:orientation="horizontal">
+    </LinearLayout>
+</RelativeLayout>

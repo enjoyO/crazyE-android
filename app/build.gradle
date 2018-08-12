@@ -6,10 +6,13 @@ android {
         applicationId "com.bai.van.radixe"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 8
-        versionName "0.3.1"
+        versionCode 10
+        versionName "0.4.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        renderscriptTargetApi 27
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -43,4 +46,5 @@ dependencies {
     implementation 'com.umeng.sdk:utdid:1.1.5.3'
     implementation 'com.umeng.sdk:push:4.2.0'
 
+    implementation 'com.wonderkiln:blurkit:1.0.0'
 }

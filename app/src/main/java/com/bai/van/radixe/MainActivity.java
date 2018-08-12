@@ -171,7 +171,7 @@ public class MainActivity extends BaseActivity implements
     private FragmentTransaction switchFragment(Fragment targetFragment) {
 
         FragmentTransaction transaction = getSupportFragmentManager()
-                .beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                .beginTransaction().setTransition(FragmentTransaction.TRANSIT_NONE);
         if (!targetFragment.isAdded()) {
             if (currentFragment != null) {
                 transaction.hide(currentFragment);

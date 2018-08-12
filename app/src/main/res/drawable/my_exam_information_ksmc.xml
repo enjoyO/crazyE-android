@@ -6,13 +6,9 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
             <solid
-                android:color="@color/aluminum"/>
+                android:color="@color/iron"/>
             <corners
-                android:radius="2dp"
-                />
-            <stroke
-                android:width="2dp"
-                android:color="@color/aluminum"/>
+                android:radius="2dp"/>
         </shape>
     </item>
 </layer-list>

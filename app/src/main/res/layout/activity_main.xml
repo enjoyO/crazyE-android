@@ -36,16 +36,25 @@
         <!--</LinearLayout>-->
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/geyser"
+        app:layout_constraintBottom_toTopOf="@id/navigation">
+
+    </LinearLayout>
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/snow_white"
+        android:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation"
         app:itemIconTint="@drawable/navigator_main_click"
-        app:itemTextColor="@drawable/navigator_main_click"/>
+        app:itemTextColor="@drawable/navigator_main_click"
+        app:elevation="0dp"/>
 
 </android.support.constraint.ConstraintLayout>

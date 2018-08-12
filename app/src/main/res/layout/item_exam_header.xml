@@ -20,7 +20,7 @@
                 android:layout_marginTop="18dp"/>
             <TextView
                 android:id="@+id/examHeaderColor"
-                android:layout_width="2dp"
+                android:layout_width="3dp"
                 android:layout_height="match_parent"
                 android:background="@color/silver_sand"
                 android:layout_gravity="center_horizontal"/>

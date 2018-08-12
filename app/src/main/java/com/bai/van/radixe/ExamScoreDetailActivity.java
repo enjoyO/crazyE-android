@@ -1,12 +1,20 @@
 package com.bai.van.radixe;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bai.van.radixe.baseclass.BaseActivity;
+import com.bai.van.radixe.constantdata.ConstantValues;
+import com.bai.van.radixe.constantdata.SharedData;
 import com.bai.van.radixe.datastru.ExamScoreInf;
 import com.bai.van.radixe.userdata.UserInformation;
 
@@ -14,7 +22,7 @@ import com.bai.van.radixe.userdata.UserInformation;
  * @author van
  */
 
-public class ExamScoreDetailActivity extends BaseActivity {
+public class ExamScoreDetailActivity extends Activity {
     private TextView examName, examScore, examGpa, examCredit, examPeriod, examSemester,
             examLearnWay, examValidity, examPass, examType, examNatu, examAcademy, examTime,
             examUsualPerformance, examMidtermPerformance, examFinalPerformance,
@@ -23,40 +31,46 @@ public class ExamScoreDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
         setContentView(R.layout.activity_exam_score_detail);
         initial();
         loadScoreInf(getIntent().getStringExtra("examScoreName"));
     }
     private void loadScoreInf(String name){
-        ExamScoreInf examScoreInf = null;
-        for (int i = 0; i < UserInformation.examScoreInfList.size(); i++){
-            if (UserInformation.examScoreInfList.get(i).examName.equals(name)){
-                examScoreInf = UserInformation.examScoreInfList.get(i);
-                break;
-            }
-        }
-        if (examScoreInf != null){
-            examName.setText(examScoreInf.examName);
-            examScore.setText(examScoreInf.examScore);
-            examGpa.setText(examScoreInf.examGpa);
-            examCredit.setText(examScoreInf.examCredit);
-            examPeriod.setText(examScoreInf.examPeriod);
-            examSemester.setText(examScoreInf.examSemeter);
-            examLearnWay.setText("".equals(examScoreInf.examWay) ? "无" : examScoreInf.examWay);
-            examValidity.setText(examScoreInf.examValidity);
-            examPass.setText(examScoreInf.examPass);
-            examType.setText(examScoreInf.examType);
-            examNatu.setText(examScoreInf.examNatu);
-            examAcademy.setText(examScoreInf.examAcademy);
-            examTime.setText(examScoreInf.examTime);
 
-            examUsualPerformance.setText("null".equals(examScoreInf.examUsualPerformance) ? "无" : examScoreInf.examUsualPerformance);
-            examMidtermPerformance.setText("null".equals(examScoreInf.examMidtermPerformance) ? "无" : examScoreInf.examMidtermPerformance);
-            examFinalPerformance.setText("null".equals(examScoreInf.examFinalPerformance) ? "无" : examScoreInf.examFinalPerformance);
+        if (SharedData.examScoreInf != null){
+            examName.setText(SharedData.examScoreInf.examName);
+            examScore.setText("成绩: ".concat(SharedData.examScoreInf.examScore));
+            examGpa.setText("绩点: ".concat(SharedData.examScoreInf.examGpa));
+            examCredit.setText("学分: ".concat(SharedData.examScoreInf.examCredit));
+            examPeriod.setText(SharedData.examScoreInf.examPeriod);
+            examSemester.setText(SharedData.examScoreInf.examSemeter);
+            examLearnWay.setText("".equals(SharedData.examScoreInf.examWay) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examWay);
+            examValidity.setText(SharedData.examScoreInf.examValidity);
+            examPass.setText(SharedData.examScoreInf.examPass);
+            examType.setText(SharedData.examScoreInf.examType);
+            examNatu.setText(SharedData.examScoreInf.examNatu);
+            examAcademy.setText(SharedData.examScoreInf.examAcademy);
+            examTime.setText(SharedData.examScoreInf.examTime);
 
-            examUsualPerformanceRatio.setText("null".equals(examScoreInf.examUsualPerformanceRatio) ? "无" : examScoreInf.examUsualPerformanceRatio.concat("%"));
-            examMidtermPerformanceRatio.setText("null".equals(examScoreInf.examMidtermPerformanceRatio) ? "无" : examScoreInf.examMidtermPerformanceRatio.concat("%"));
-            examFinalPerformanceRatio.setText("null".equals(examScoreInf.examFinalPerformanceRatio) ? "无" : examScoreInf.examFinalPerformanceRatio.concat("%"));
+            examUsualPerformance.setText("null".equals(SharedData.examScoreInf.examUsualPerformance) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examUsualPerformance);
+            examMidtermPerformance.setText("null".equals(SharedData.examScoreInf.examMidtermPerformance) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examMidtermPerformance);
+            examFinalPerformance.setText("null".equals(SharedData.examScoreInf.examFinalPerformance) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examFinalPerformance);
+
+            examUsualPerformanceRatio.setText("null".equals(SharedData.examScoreInf.examUsualPerformanceRatio) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examUsualPerformanceRatio.concat("%"));
+            examMidtermPerformanceRatio.setText("null".equals(SharedData.examScoreInf.examMidtermPerformanceRatio) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examMidtermPerformanceRatio.concat("%"));
+            examFinalPerformanceRatio.setText("null".equals(SharedData.examScoreInf.examFinalPerformanceRatio) ? ConstantValues.NO_DATA_TEXT : SharedData.examScoreInf.examFinalPerformanceRatio.concat("%"));
 
         }else {
             Log.d("ExamScoreDetail", "error");
@@ -84,7 +98,7 @@ public class ExamScoreDetailActivity extends BaseActivity {
         examMidtermPerformanceRatio = (TextView) findViewById(R.id.examMidtermPerformanceRatioText);
         examFinalPerformanceRatio = (TextView) findViewById(R.id.examFinalPerformanceRatioText);
 
-        RelativeLayout scoreDetailBack = (RelativeLayout) findViewById(R.id.examScoreDetailBack);
+        LinearLayout scoreDetailBack = findViewById(R.id.examScoreDetailBack);
 
         scoreDetailBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +111,6 @@ public class ExamScoreDetailActivity extends BaseActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
+        overridePendingTransition(android.R.anim.accelerate_decelerate_interpolator, android.R.anim.accelerate_interpolator);
     }
 }

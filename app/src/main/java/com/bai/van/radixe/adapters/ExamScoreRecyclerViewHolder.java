@@ -14,21 +14,29 @@ import com.bai.van.radixe.R;
 
 public class ExamScoreRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView examValue, examName, examSemetser, examCredit, examGpa, examType;
+    public TextView examValue, examName, examCredit, examGpa, examType;
 
     private RecyclerViewItemClickListener recyclerViewItemClickListener;
 
-    public ExamScoreRecyclerViewHolder(View itemView, RecyclerViewItemClickListener recyclerViewItemClickListener) {
-        super(itemView);
-        this.recyclerViewItemClickListener = recyclerViewItemClickListener;
-        itemView.setOnClickListener(this);
+    public TextView examHeaderSemester, examHeaderCredit, examHeaderCount;
 
-        examName = (TextView) itemView.findViewById(R.id.examScoreName);
-        examValue = (TextView) itemView.findViewById(R.id.examScoreValue);
-        examSemetser = (TextView) itemView.findViewById(R.id.examScoreSemester);
-        examCredit = (TextView) itemView.findViewById(R.id.examScoreCredit);
-        examGpa = (TextView) itemView.findViewById(R.id.examScoreGpa);
-        examType = (TextView) itemView.findViewById(R.id.examType);
+    public ExamScoreRecyclerViewHolder(View itemView, RecyclerViewItemClickListener recyclerViewItemClickListener, int type) {
+        super(itemView);
+
+        if (type == 1) {
+            this.recyclerViewItemClickListener = recyclerViewItemClickListener;
+            itemView.setOnClickListener(this);
+
+            examName = (TextView) itemView.findViewById(R.id.examScoreName);
+            examValue = (TextView) itemView.findViewById(R.id.examScoreValue);
+            examCredit = (TextView) itemView.findViewById(R.id.examScoreCredit);
+            examGpa = (TextView) itemView.findViewById(R.id.examScoreGpa);
+            examType = (TextView) itemView.findViewById(R.id.examType);
+        }else if (type == 0){
+            examHeaderSemester = itemView.findViewById(R.id.item_score_head_semester_text);
+            examHeaderCredit = itemView.findViewById(R.id.item_score_head_get_credit_text);
+            examHeaderCount = itemView.findViewById(R.id.item_score_head_count_text);
+        }
     }
 
     @Override

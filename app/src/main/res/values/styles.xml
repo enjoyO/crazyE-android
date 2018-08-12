@@ -13,11 +13,11 @@
     </style>
     <style name="LoginActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/white_smoke</item>
-        <item name="colorAccent">@color/steel</item>
+        <item name="colorAccent">@color/tree_poppy</item>
     </style>
     <style name="MainActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/mainColor</item>
-        <item name="colorAccent">@color/bittersweet</item>
+        <item name="colorAccent">@color/tree_poppy</item>
         <item name="android:actionMenuTextColor">@color/white</item>
         <item name="android:windowIsTranslucent">false</item>
 
@@ -50,5 +50,11 @@
         <item name="overlapAnchor">false</item>
         <item name="android:textColor">@color/tuatara</item>
         <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor" android:ignore="NewApi">@android:color/transparent</item>
     </style>
 </resources>

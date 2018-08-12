@@ -35,6 +35,7 @@ import com.bai.van.radixe.MainActivity;
 import com.bai.van.radixe.R;
 import com.bai.van.radixe.TimeTableItemDetailActivity;
 import com.bai.van.radixe.constantdata.ConstantValues;
+import com.bai.van.radixe.constantdata.SharedData;
 import com.bai.van.radixe.constantdata.StaticMethod;
 import com.bai.van.radixe.datastru.TimeTableInf;
 import com.bai.van.radixe.entry.Entry;
@@ -48,6 +49,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -195,7 +197,6 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             aWeekDisplayLayout.removeAllViews();
         }
 
-        TimeTableInf timeTableInf;
         int length, colorChoPar;
         boolean isAddNote;
 
@@ -212,16 +213,17 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
 
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < timeTableList.get(i).size(); j++) {
-                timeTableInf = timeTableList.get(i).get(j);
+                final TimeTableInf timeTableInf = timeTableList.get(i).get(j);
                 isAddNote = false;
                 relativeLayout = new RelativeLayout(getActivity());
                 final TextView textView = new TextView(getActivity());
                 textView.setText(timeTableInf.className.concat("@").concat(timeTableInf.address));
 
-                textView.setTextSize(13);
+                textView.setTextSize(12);
                 textView.setTypeface(typefaceOrchid);
                 textView.setTextColor(getResources().getColor(R.color.white));
                 textView.setClickable(true);
+                textView.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
 
@@ -257,18 +259,17 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        SharedData.timeTableInf = timeTableInf;
                         Intent intent = new Intent(getActivity(), TimeTableItemDetailActivity.class);
-                        intent.putExtra("dayInWeek", deterDayInWeek(view.getParent().getParent().getParent()));
-                        intent.putExtra("courseName", textView.getText().toString());
                         startActivity(intent);
-                        getActivity().overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
+                        Objects.requireNonNull(getActivity()).overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
                 });
 
                 length = timeTableInf.maxKnob - timeTableInf.minKnob + 1;
 
-                cardView = new CardView(getActivity());
-                cardView.setCardElevation(1 * density);
+                cardView = new CardView(Objects.requireNonNull(getActivity()));
+                cardView.setCardElevation(0);
                 cardView.setRadius(5 * density);
 
                 layoutParamsText = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

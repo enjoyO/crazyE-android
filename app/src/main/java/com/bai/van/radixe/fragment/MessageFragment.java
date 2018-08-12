@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +24,8 @@ import com.bai.van.radixe.entry.Entry;
 import com.bai.van.radixe.urlrequests.GradesRequest;
 import com.bai.van.radixe.urlrequests.UserInfRequest;
 import com.bai.van.radixe.userdata.UserInformation;
+
+import java.util.Objects;
 
 
 /**
@@ -52,6 +55,7 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
     public TextView myName, myMajor, examFinishHeaderColor, examUnfinishHeaderColor, examHeaderUnfinishText, examHeaderFinishText;
     private RecyclerView.LayoutManager examScheduleFinishlayoutManager, examScheduleUnfinishlayoutManager, examInScheduleLayoutManager;
     private RecyclerView examFinishRecyclerView, examUnfinishRecyclerView, examInScheduleRecyclerView;
+    private ImageView imageViewIcon;
 
     private ExamScheduleAdapter examScheduleFinishAdapter, examScheduleUnfinishAdapter, examInScheduleAdapter;
     private Context context;
@@ -104,6 +108,8 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
         examUnfinishRecyclerView = (RecyclerView) view.findViewById(R.id.examUnfinishRecyclerView);
         examInScheduleRecyclerView = (RecyclerView) view.findViewById(R.id.examInscheduleRecyclerView);
 
+        imageViewIcon = view.findViewById(R.id.myIcon);
+
         examInScheduleRecyclerView.setNestedScrollingEnabled(false);
         examUnfinishRecyclerView.setNestedScrollingEnabled(false);
         examFinishRecyclerView.setNestedScrollingEnabled(false);
@@ -126,6 +132,7 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
 
         loadUserName();
     }
+
     private void loadUserName(){
         MainActivity.mMainThreadPoolExecutor.execute(new Runnable() {
             @Override
@@ -136,7 +143,15 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
                     public void run() {
                         myName.setText(UserInformation.usernameChar);
                         myMajor.setText(UserInformation.userMajor);
-                        getActivity().getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+
+                        if ("女".endsWith(UserInformation.userInf.baseGender)) {
+                            imageViewIcon.setImageDrawable(getResources().getDrawable(
+                                    ConstantValues.HEAD_NAME_GIRL[Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 1))]));
+                        }else {
+                            imageViewIcon.setImageDrawable(getResources().getDrawable(
+                                    ConstantValues.HEAD_NAME_BOY[Integer.parseInt(UserInformation.username.substring(UserInformation.username.length() - 1))]));
+                        }
+                        Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                                 .edit().putInt(Entry.SharedPreferencesEntry.USER_STA_YEAR, UserInformation.userStaYear).apply();
                     }
                 });

@@ -48,7 +48,6 @@ public class ExamScoreRecyclerViewFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private ExamScoreRecyclerViewAdapter examScoreRecyclerViewAdapter;
-    private ExamScoreRecyclerViewFragment examScoreRecyclerViewFragment;
     private String tabSelectedSign = "";
 
 
@@ -92,7 +91,7 @@ public class ExamScoreRecyclerViewFragment extends Fragment {
 
         layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
 
-        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(examScoreRecyclerViewFragment, buildScoreData(), tabSelectedSign);
+        examScoreRecyclerViewAdapter = new ExamScoreRecyclerViewAdapter(this, buildScoreData(), tabSelectedSign);
 
         examScoreRecyclerViewAdapter.setOnItemClickListener(new ExamScoreRecyclerViewHolder.RecyclerViewItemClickListener() {
             @Override

@@ -66,25 +66,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/examScoreName"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:maxLines="2"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="毛泽东思想和中国特色社会主义理论体系概论(上)"
                     android:textColor="@color/tuatara"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/examType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/card_score_type_text_background"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="学科基础"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5dp"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="3dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -105,21 +118,6 @@
                         android:text="学分：3"
                         android:textColor="@color/steel"
                         android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/examType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/card_score_type_text_background"
-                        android:paddingEnd="2dp"
-                        android:paddingStart="2dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginBottom="1dp"
-                        android:text="学科基础"
-                        android:textColor="@color/white"
-                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

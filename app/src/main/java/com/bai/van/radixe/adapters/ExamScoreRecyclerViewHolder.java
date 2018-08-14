@@ -18,7 +18,7 @@ public class ExamScoreRecyclerViewHolder extends RecyclerView.ViewHolder impleme
 
     private RecyclerViewItemClickListener recyclerViewItemClickListener;
 
-    public TextView examHeaderSemester, examHeaderCredit, examHeaderCount;
+    public TextView examHeaderSemester, examHeaderCredit, examHeaderCount, examHeaderScore;
 
     public ExamScoreRecyclerViewHolder(View itemView, RecyclerViewItemClickListener recyclerViewItemClickListener, int type) {
         super(itemView);
@@ -36,6 +36,7 @@ public class ExamScoreRecyclerViewHolder extends RecyclerView.ViewHolder impleme
             examHeaderSemester = itemView.findViewById(R.id.item_score_head_semester_text);
             examHeaderCredit = itemView.findViewById(R.id.item_score_head_get_credit_text);
             examHeaderCount = itemView.findViewById(R.id.item_score_head_count_text);
+            examHeaderScore = itemView.findViewById(R.id.item_score_head_score_text);
         }
     }
 

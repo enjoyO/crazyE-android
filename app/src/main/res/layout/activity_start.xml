@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/novaflat"
         android:gravity="center_horizontal"
-        android:textColor="@color/dove_gray"
+        android:textColor="@color/silver_sand"
         android:text="@string/app_name"
         android:textSize="22sp"
         android:textStyle="bold"

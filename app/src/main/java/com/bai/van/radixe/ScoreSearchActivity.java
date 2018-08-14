@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bai.van.radixe.adapters.ExamScoreRecyclerViewAdapter;
 import com.bai.van.radixe.adapters.ExamScoreRecyclerViewHolder;
 import com.bai.van.radixe.baseclass.BaseActivity;
+import com.bai.van.radixe.constantdata.Data;
 import com.bai.van.radixe.constantdata.SharedData;
 import com.bai.van.radixe.constantdata.StaticMethod;
 import com.bai.van.radixe.datastru.ExamScoreInf;
@@ -53,7 +54,10 @@ public class ScoreSearchActivity extends BaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_search);
-        
+
+        if (Data.PRIME_TYPE.size() == 0) {
+            Data.initial();
+        }
         initial();
     }
 
@@ -219,6 +223,7 @@ public class ScoreSearchActivity extends BaseActivity implements
     public void afterTextChanged(Editable editable) {
         String textIn = scoreSearchEditText.getText().toString();
 
+        textIn = textIn.replace("＃", "#");
         if (textIn.startsWith("#") && !"#".equals(textIn)) {
             List<ExamScoreInf> dataFilterList = new ArrayList<>();
             for (ExamScoreInf examScoreInf : UserInformation.examScoreInfList) {

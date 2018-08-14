@@ -73,7 +73,7 @@ public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapte
                 holder.examTimeWeek.setText(dataList.get(position).timesWeek);
             }
             if (position == (dataList.size() - 1)){
-                holder.examFootColor.setBackgroundColor(context.getResources().getColor(R.color.snow_white));
+                holder.examFootColor.setVisibility(View.INVISIBLE);
             }
         }
     }

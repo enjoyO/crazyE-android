@@ -110,7 +110,8 @@
                                     android:layout_width="3dp"
                                     android:layout_height="match_parent"
                                     android:background="@color/silver_sand"
-                                    android:layout_gravity="center_horizontal"/>
+                                    android:layout_gravity="center_horizontal"
+                                    android:visibility="invisible"/>
                             </LinearLayout>
                             <TextView
                                 android:id="@+id/examHeaderUnfinishText"
@@ -152,7 +153,8 @@
                                     android:layout_width="3dp"
                                     android:layout_height="match_parent"
                                     android:background="@color/silver_sand"
-                                    android:layout_gravity="center_horizontal"/>
+                                    android:layout_gravity="center_horizontal"
+                                    android:visibility="invisible"/>
                             </LinearLayout>
                             <TextView
                                 android:id="@+id/examFinishHeaderText"

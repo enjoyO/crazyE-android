@@ -93,9 +93,10 @@ public class ConstantValues {
 
     public static final String TIME_TABLE_ALARM_ACTION = "com.bai.van.radixe.service.TimeTableAlarmReceiver";
 
+    public static final String PRIME_NAME = "综合素质教育选修";
+
     public static final String NO_DATA_TEXT = "👻";
 
     public static final int[] HEAD_NAME_BOY = {R.drawable.bun, R.drawable.rice_ball, R.drawable.kiwi, R.drawable.watermelon, R.drawable.pumpkin, R.drawable.chestnut, R.drawable.blueberry, R.drawable.fresh_meat, R.drawable.orange, R.drawable.cabbage};
-
     public static final int[] HEAD_NAME_GIRL = {R.drawable.pomegranate, R.drawable.octopus, R.drawable.mushroom, R.drawable.dragon_fruit, R.drawable.tomato, R.drawable.coconut, R.drawable.cabbage, R.drawable.bun, R.drawable.orange, R.drawable.rice_ball};
 }

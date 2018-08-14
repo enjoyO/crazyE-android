@@ -181,14 +181,14 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
                                 .concat(Integer.toString(UserInformation.examScheduledUnfinishList.size()))
                                 .concat(")"));
                         if (UserInformation.examScheduledFinishList.size() == 0){
-                            examFinishHeaderColor.setBackgroundColor(getResources().getColor(R.color.snow_white));
+                            examFinishHeaderColor.setVisibility(View.INVISIBLE);
                         }else {
-                            examFinishHeaderColor.setBackgroundColor(getResources().getColor(R.color.silver_sand));
+                            examFinishHeaderColor.setVisibility(View.VISIBLE);
                         }
                         if (UserInformation.examScheduledUnfinishList.size() == 0){
-                            examUnfinishHeaderColor.setBackgroundColor(getResources().getColor(R.color.snow_white));
+                            examUnfinishHeaderColor.setVisibility(View.INVISIBLE);
                         }else {
-                            examUnfinishHeaderColor.setBackgroundColor(getResources().getColor(R.color.silver_sand));
+                            examUnfinishHeaderColor.setVisibility(View.VISIBLE);
                         }
                         loadScheduledRecyclerView();
                         loadInScheduleList();

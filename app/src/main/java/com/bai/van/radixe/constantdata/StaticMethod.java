@@ -43,6 +43,8 @@ public class StaticMethod {
                 case 0:
                     if ("秋".equals(semesterChar.split(" ")[1].substring(0, 1))){
                         resultStr = "大一 上学期";
+                    }else {
+                        resultStr = semesterChar;
                     }
                     break;
                 case 1:
@@ -84,12 +86,26 @@ public class StaticMethod {
                     if ("春".equals(semesterChar.split(" ")[1].substring(0, 1))){
                         resultStr = "大六 下学期";
                     }
+                    break;
                 default:
+                    resultStr = semesterChar;
+                    break;
             }
         }catch (ArrayIndexOutOfBoundsException e){
             e.printStackTrace();
         }
 
         return resultStr;
+    }
+
+    public static int toHash(String key) {
+        int arraySize = 11;
+        // 数组大小一般取质数
+        int hashCode = 0;
+        for (int i = 0; i < key.length(); i++) {
+            int letterValue = key.charAt(i) - 96;
+            hashCode = ((hashCode << 5) + letterValue) % arraySize;
+        }
+        return hashCode;
     }
 }

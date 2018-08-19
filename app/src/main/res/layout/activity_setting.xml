@@ -176,6 +176,73 @@
                         android:textSize="14sp"/>
                 </LinearLayout>
             </LinearLayout>
+            <RelativeLayout
+
+                android:id="@+id/time_table_color_pattern"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="NewApi">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="课程表显示颜色更改"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:textColor="@color/steel"
+                        android:textSize="12sp"
+                        android:text="刷新课程表后有效"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/dis_color_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="center_vertical"
+                        app:cardBackgroundColor="@color/mandy"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"/>
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/dis_color_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        app:cardBackgroundColor="@color/flamenco"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"/>
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/dis_color_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        app:cardBackgroundColor="@color/lima"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"/>
+                </RelativeLayout>
+            </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

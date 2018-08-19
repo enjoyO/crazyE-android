@@ -112,6 +112,7 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
 
                 mIntent.putExtra("courseName", intent.getStringExtra("courseName"));
                 mIntent.putExtra("dayInWeek", intent.getIntExtra("dayInWeek", -1));
+                mIntent.putExtra("minKnob", intent.getIntExtra("minKnob", 0));
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, mIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 

@@ -27,5 +27,7 @@
 
     <dimen name="scoreDetailItemPadding">4dp</dimen>
 
+    <dimen name="timeTableColorChoosePatternSpace">7dp</dimen>
+
     <dimen name="labelCorner">8dp</dimen>
 </resources>

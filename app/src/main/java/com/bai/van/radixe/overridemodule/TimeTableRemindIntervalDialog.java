@@ -20,7 +20,7 @@ import com.bai.van.radixe.fragment.TimeTableFragment;
  * @date 2018/2/13
  */
 
-public class TimeTableRemindIntervalDialog extends Dialog implements View.OnClickListener{
+public class TimeTableRemindIntervalDialog extends Dialog implements View.OnClickListener {
 
     private Context context;
     private TimeTableRemindIntervalDialog.MyDialogListener listener;

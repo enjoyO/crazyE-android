@@ -86,7 +86,7 @@ public class TermChooseDialog extends Dialog implements View.OnClickListener {
         for (int i = 0; i < UserInformation.termInfList.size(); i++){
             termInf = UserInformation.termInfList.get(i);
             semesterStr = StaticMethod.semesterTran(termInf.termChar);
-            if ("".equals(semesterStr)){
+            if (semesterStr.contains("季")){
                 continue;
             }
             textViewLine = new TextView(context);

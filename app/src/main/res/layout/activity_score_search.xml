@@ -61,7 +61,7 @@
                     android:layout_toRightOf="@id/searchIm"
                     android:layout_marginStart="5dp"
                     android:background="@null"
-                    android:hint="搜索"
+                    android:hint="搜索全部成绩"
                     android:singleLine="true"
                     android:fontFamily="monospace"
                     android:textColor="@color/white_smoke"

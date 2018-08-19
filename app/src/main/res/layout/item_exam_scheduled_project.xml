@@ -60,8 +60,8 @@
                     android:text="周二"
                     android:background="@drawable/my_exam_information_ksmc"
                     android:textColor="@color/white"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
                     android:layout_marginTop="5dp"/>
                 <TextView
                     android:id="@+id/examScheduleTypeText"
@@ -71,8 +71,8 @@
                     android:text="2017年全校统一期末考试"
                     android:background="@drawable/my_exam_information_ksmc"
                     android:textColor="@color/white"
-                    android:paddingStart="4dp"
-                    android:paddingEnd="4dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
             <LinearLayout

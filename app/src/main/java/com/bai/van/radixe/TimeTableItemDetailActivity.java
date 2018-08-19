@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.bai.van.radixe.constantdata.ConstantValues;
 import com.bai.van.radixe.constantdata.SharedData;
+import com.bai.van.radixe.datastru.ExamScoreInf;
 import com.bai.van.radixe.datastru.TimeTableInf;
 import com.bai.van.radixe.sqlite.TimeTableSqliteHandle;
 import com.bai.van.radixe.userdata.UserInformation;
@@ -55,6 +56,23 @@ public class TimeTableItemDetailActivity extends Activity {
             window.setNavigationBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_time_table_item_detail);
+
+        if (UserInformation.timeTableList.size() == 0) {
+            TimeTableSqliteHandle.loadData(this);
+        }
+
+        Intent intent = getIntent();
+        int week = intent.getIntExtra("dayInWeek", -1);
+        int minKnob = intent.getIntExtra("minKnob", 0);
+        String className = intent.getStringExtra("courseName");
+        if (week != -1 && minKnob != 0) {
+            for (TimeTableInf timeTableInf : UserInformation.timeTableList.get(week)) {
+                if (timeTableInf.minKnob == minKnob && timeTableInf.className.endsWith(className)) {
+                    SharedData.timeTableInf = timeTableInf;
+                }
+            }
+            Log.d("TimeTableAlarm", "YES");
+        }
 
         initial();
 
@@ -97,7 +115,7 @@ public class TimeTableItemDetailActivity extends Activity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(android.R.anim.accelerate_decelerate_interpolator, android.R.anim.accelerate_interpolator);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     @Override

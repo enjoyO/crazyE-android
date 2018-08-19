@@ -99,4 +99,11 @@ public class ConstantValues {
 
     public static final int[] HEAD_NAME_BOY = {R.drawable.bun, R.drawable.rice_ball, R.drawable.kiwi, R.drawable.watermelon, R.drawable.pumpkin, R.drawable.chestnut, R.drawable.blueberry, R.drawable.fresh_meat, R.drawable.orange, R.drawable.cabbage};
     public static final int[] HEAD_NAME_GIRL = {R.drawable.pomegranate, R.drawable.octopus, R.drawable.mushroom, R.drawable.dragon_fruit, R.drawable.tomato, R.drawable.coconut, R.drawable.cabbage, R.drawable.bun, R.drawable.orange, R.drawable.rice_ball};
+
+    public static final int[] TIME_TABLE_COLOR_DEFAULT = {R.color.silver_sand, R.color.bittersweet, R.color.medium_sea_green, R.color.fuchsia_blue, R.color.mandy, R.color.java, R.color.flamenco, R.color.tulip_tree, R.color.lima, R.color.dodger_blue, R.color.la_rioja};
+    public static final int[] TIME_TABLE_COLOR_LIGHT = {R.color.alto, R.color.spiro_disco_ball, R.color.caribbean_green, R.color.coral, R.color.downy, R.color.deep_sky_blue, R.color.vivid_tangerine, R.color.malachite, R.color.spring_bud, R.color.las_palmas, R.color.yellow_sea};
+    public static final int[] TIME_TABLE_COLOR_LIGHTS = {R.color.alto, R.color.flamingo_pink, R.color.glacier, R.color.yourpink, R.color.sprays, R.color.monte_carlo, R.color.columbia_blue, R.color.wewak, R.color.deco, R.color.sweet_corn, R.color.light_sky_blue};
+
+    public static final int[] TIME_TABLE_COLOR_MEDIUM = {R.color.alto, R.color.bright_sun, R.color.caper, R.color.tacao, R.color.vivid_tangerine, R.color.atlantis, R.color.downys, R.color.burnt_siennas, R.color.cornflower_blue, R.color.picton_blue, R.color.downyse};
+
 }

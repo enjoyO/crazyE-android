@@ -1,5 +1,6 @@
 package com.bai.van.radixe.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -127,7 +129,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        isCreatTimeTableAlarm = getActivity().getSharedPreferences("myspl", Context.MODE_PRIVATE).getBoolean("isReceiveTimeTableAlarm", true);
+        isCreatTimeTableAlarm = Objects.requireNonNull(getActivity()).getSharedPreferences("myspl", Context.MODE_PRIVATE).getBoolean("isReceiveTimeTableAlarm", true);
         setHasOptionsMenu(true);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -167,7 +169,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
         calendar.set(Calendar.MILLISECOND, 0);
         calendar.set(Calendar.SECOND, 0);
 
-        getActivity().getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+        Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                 .edit().putLong(Entry.SharedPreferencesEntry.CURRENT_WEEK_TIMEINMILLIS, calendar.getTimeInMillis()).apply();
 
         Log.d("noFirstWeek", calendar.getTimeInMillis() + "");
@@ -216,6 +218,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 final TimeTableInf timeTableInf = timeTableList.get(i).get(j);
                 isAddNote = false;
                 relativeLayout = new RelativeLayout(getActivity());
+                cardView = new CardView(Objects.requireNonNull(getActivity()));
                 final TextView textView = new TextView(getActivity());
                 textView.setText(timeTableInf.className.concat("@").concat(timeTableInf.address));
 
@@ -224,17 +227,17 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 textView.setTextColor(getResources().getColor(R.color.white));
                 textView.setClickable(true);
                 textView.setGravity(Gravity.CENTER_HORIZONTAL);
+                textView.setBackgroundResource(R.drawable.time_table_panel_gray);
 
+                colorChoPar = Math.abs(timeTableInf.className.hashCode() + userNameAttr);
+                colorChoPar = colorChoPar % 11 == 0 ? 4 : colorChoPar % 11;
 
-
-                colorChoPar = (((int) (timeTableInf.className.charAt(0)) % 20 + 1) * userNameAttr);
-
-                colorChoPar = colorChoPar % 10 + 1 == 10 ? 1 : colorChoPar % 10 + 1;
+//                Log.d("TIMETABLE COLOR", timeTableInf.className.hashCode() + "");
 
 
                 if (j > 0 && timeTableInf.minKnob == timeTableList.get(i).get(j - 1).minKnob) {
                     if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
-                        setTextBackground(textView, colorChoPar);
+                        setTextBackground(cardView, colorChoPar);
                     } else {
                         continue;
                     }
@@ -243,16 +246,17 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
 
                 if (j < timeTableList.get(i).size() - 1 && timeTableInf.minKnob == timeTableList.get(i).get(j + 1).minKnob) {
                     if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
-                        setTextBackground(textView, colorChoPar);
+                        setTextBackground(cardView, colorChoPar);
                     }
                     isAddNote = true;
                 }
 
                 if (StaticMethod.isCurrentWeek(currentWeekNo, timeTableInf.weekStr)) {
-                    setTextBackground(textView, colorChoPar);
+                    setTextBackground(cardView, colorChoPar);
                 } else {
-                    setTextBackground(textView, 0);
+                    setTextBackground(cardView, 0);
                 }
+
 
                 textView.setPadding((int) (2 * density), (int) (2 * density), (int) (2 * density), (int) (2 * density));
 
@@ -268,7 +272,6 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
 
                 length = timeTableInf.maxKnob - timeTableInf.minKnob + 1;
 
-                cardView = new CardView(Objects.requireNonNull(getActivity()));
                 cardView.setCardElevation(0);
                 cardView.setRadius(5 * density);
 
@@ -305,12 +308,12 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 }
 
                 if ("".equals(UserInformation.currentTerm)) {
-                    UserInformation.currentTermChar = getActivity().getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                    UserInformation.currentTermChar = Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                             .getString(Entry.SharedPreferencesEntry.CURRENT_TERM, "");
                     UserInformation.userStaYear = getActivity().getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                             .getInt(Entry.SharedPreferencesEntry.USER_STA_YEAR, 0);
                 } else {
-                    getActivity().getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE).edit()
+                    Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE).edit()
                             .putString(Entry.SharedPreferencesEntry.CURRENT_TERM, UserInformation.currentTermChar).apply();
                 }
 
@@ -362,7 +365,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.time_table_change_term) {
                     termChooseBottomDialog.show();
-                    WindowManager.LayoutParams layoutParams = termChooseBottomDialog.getWindow().getAttributes();
+                    WindowManager.LayoutParams layoutParams = Objects.requireNonNull(termChooseBottomDialog.getWindow()).getAttributes();
                     layoutParams.width = (int) (widthPixels);
                     termChooseBottomDialog.getWindow().setAttributes(layoutParams);
                     return true;
@@ -392,7 +395,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                         public void run() {
                             boolean isEqual = UserInformation.currentTerm.equals(UserInformation.termTranMap.get(timeTableYear));
                             if (isEqual) {
-                                TimeTableAlarmSetting.cancelTimeTableAlarm(getActivity(), UserInformation.timeTableList);
+                                TimeTableAlarmSetting.cancelTimeTableAlarm(Objects.requireNonNull(getActivity()), UserInformation.timeTableList);
                             }
                             TimeTableRequest.timetableRequest(UserInformation.termTranMap.get(timeTableYear));
                             if (isEqual) {
@@ -493,7 +496,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             textView.setTextColor(getResources().getColor(R.color.steel));
             textView.setTypeface(typefaceOrchid);
             textView.setTextSize(15);
-            textView.setPadding((int) (5 * density), (int) (5 * density), (int) (5 * density), (int) (5 * density));
+            textView.setPadding((int) (7 * density), (int) (5 * density), (int) (7 * density), (int) (5 * density));
 
             if (i == 0) {
                 firstWeekTextView = textView;
@@ -559,17 +562,15 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_time_table, container, false);
 
         initial(view);
-
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -668,10 +669,9 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             }
         });
         termChooseBottomDialog.setCanceledOnTouchOutside(true);
-        termChooseBottomDialog.getWindow().setGravity(Gravity.BOTTOM);
+        Objects.requireNonNull(termChooseBottomDialog.getWindow()).setGravity(Gravity.BOTTOM);
         termChooseBottomDialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
     }
-
 
     private boolean isNetworkConnected(Context context) {
         if (context != null) {
@@ -704,43 +704,24 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
         }
     }
 
-    private void setTextBackground(TextView textView, int no) {
-        switch (no) {
+    private void setTextBackground(CardView cardView, int no) {
+        switch (Objects.requireNonNull(getActivity()).getSharedPreferences("myspl", Context.MODE_PRIVATE).getInt(Entry.SharedPreferencesEntry.TIME_TABLE_COLOR_TYPE, 0)) {
             case 0:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_gray));
+                cardView.setCardBackgroundColor(getResources().getColor(ConstantValues.TIME_TABLE_COLOR_DEFAULT[no]));
                 break;
             case 1:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_bittersweet));
+                cardView.setCardBackgroundColor(getResources().getColor(ConstantValues.TIME_TABLE_COLOR_MEDIUM[no]));
                 break;
-            case 2:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_mandy));
-                break;
-            case 3:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_flamenco));
-                break;
-            case 4:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_java));
-                break;
-            case 5:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_seagreen));
-                break;
-            case 6:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_fuchsiablue));
-                break;
-            case 7:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_tuliptree));
-                break;
-            case 8:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_lima));
-                break;
-            case 9:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_dodgerblue));
-                break;
-            case 10:
-                textView.setBackground(getResources().getDrawable(R.drawable.time_table_panel_larioja));
+            case 21:
+                if (no == 0) {
+                    cardView.setCardBackgroundColor(getResources().getColor(R.color.silver_sand));
+                }else {
+                    cardView.setCardBackgroundColor(getResources().getColor(R.color.black));
+                }
                 break;
             default:
         }
+
     }
 
     /**

@@ -111,6 +111,6 @@ public class ExamScoreDetailActivity extends Activity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(android.R.anim.accelerate_decelerate_interpolator, android.R.anim.accelerate_interpolator);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

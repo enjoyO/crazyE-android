@@ -4,25 +4,25 @@
     <item android:state_focused="true">
         <shape>
             <corners android:radius="5dp" />
-            <solid android:color="@color/silver_sand" />
+            <!--<solid android:color="@color/silver_sand" />-->
         </shape>
     </item>
     <item android:state_pressed="true">
         <shape>
             <corners android:radius="5dp" />
-            <solid android:color="@color/iron" />
+            <solid android:color="@color/mercury" />
         </shape>
     </item>
     <item android:state_selected="true">
         <shape>
             <corners android:radius="5dp" />
-            <solid android:color="@color/iron" />
+            <solid android:color="@color/mercury" />
         </shape>
     </item>
     <item>
         <shape>
             <corners android:radius="5dp" />
-            <solid android:color="@color/silver_sand" />
+            <!--<solid android:color="@color/silver_sand" />-->
         </shape>
     </item>
 </selector>

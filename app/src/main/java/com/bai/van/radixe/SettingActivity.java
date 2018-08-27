@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bai.van.radixe.baseclass.BaseActivity;
 import com.bai.van.radixe.constantdata.ConstantValues;
 import com.bai.van.radixe.entry.Entry;
+import com.bai.van.radixe.overridemodule.CampusChooseDialog;
 import com.bai.van.radixe.overridemodule.TermChooseDialog;
 import com.bai.van.radixe.overridemodule.TimeTableColorChooseDialog;
 import com.bai.van.radixe.overridemodule.TimeTableRemindIntervalDialog;
@@ -40,12 +41,12 @@ public class SettingActivity extends BaseActivity implements
         CompoundButton.OnCheckedChangeListener{
 
     private LinearLayout timeTableAlarmSettingLayout;
-    private TextView timeTableAlarmIntervalDisplayText;
+    private TextView timeTableAlarmIntervalDisplayText, campusName;
     private Context context;
     private SharedPreferences sharedPreferences;
     private TimeTableRemindIntervalDialog timeTableRemindIntervalDialog;
     private TimeTableColorChooseDialog timeTableColorChooseDialog;
-    private RelativeLayout timeTableColorChoose;
+    private CampusChooseDialog campusChooseDialog;
     CardView cardView_color_1, cardView_color_2, cardView_color_3;
 
     private float widthPixels;
@@ -74,17 +75,21 @@ public class SettingActivity extends BaseActivity implements
         Switch autoLoginSwitch = findViewById(R.id.autoLoginSwitch);
         Switch timeTableAlarmSwitch = findViewById(R.id.timeTableAlarmSwitch);
 
+        campusName = findViewById(R.id.campus_name);
+
         cardView_color_1 = findViewById(R.id.dis_color_1);
         cardView_color_2 = findViewById(R.id.dis_color_2);
         cardView_color_3 = findViewById(R.id.dis_color_3);
 
-        timeTableColorChoose = findViewById(R.id.time_table_color_pattern);
+        RelativeLayout timeTableColorChoose = findViewById(R.id.time_table_color_pattern);
+        RelativeLayout campusChoose = findViewById(R.id.time_table_campus_choose);
 
         settingBack.setOnClickListener(this);
         aboutLayout.setOnClickListener(this);
         signOutLayout.setOnClickListener(this);
         timeTableColorChoose.setOnClickListener(this);
         timeTableAlarmSettingLayout.setOnClickListener(this);
+        campusChoose.setOnClickListener(this);
         autoLoginSwitch.setOnCheckedChangeListener(this);
         timeTableAlarmSwitch.setOnCheckedChangeListener(this);
 
@@ -95,6 +100,7 @@ public class SettingActivity extends BaseActivity implements
                 .concat("分钟"));
 
         setTimeTableColorChooseDis();
+        setCampusName();
     }
 
     private void setTimeTableColorChooseDis() {
@@ -119,6 +125,17 @@ public class SettingActivity extends BaseActivity implements
             default:
         }
     }
+    private void setCampusName() {
+        switch (Objects.requireNonNull(this).getSharedPreferences("myspl", Context.MODE_PRIVATE).getInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 1)) {
+            case 0:
+                campusName.setText("校本部");
+                break;
+            case 1:
+                campusName.setText("呈贡校区");
+                break;
+            default:
+        }
+    }
 
     @Override
     public void onClick(View view) {
@@ -137,14 +154,18 @@ public class SettingActivity extends BaseActivity implements
                 WindowManager.LayoutParams layoutParams = Objects.requireNonNull(timeTableRemindIntervalDialog.getWindow()).getAttributes();
                 layoutParams.width = (int)(widthPixels);
                 timeTableRemindIntervalDialog.getWindow().setAttributes(layoutParams);
-                Log.d("click", "timeTableAlarmSettingLayout");
                 break;
             case R.id.time_table_color_pattern:
                 timeTableColorChooseDialog.show();
                 WindowManager.LayoutParams layoutParams1 = Objects.requireNonNull(timeTableColorChooseDialog.getWindow()).getAttributes();
                 layoutParams1.width = (int)(widthPixels);
                 timeTableColorChooseDialog.getWindow().setAttributes(layoutParams1);
-                Log.d("click", "timeTableAlarmSettingLayout");
+                break;
+            case R.id.time_table_campus_choose:
+                campusChooseDialog.show();
+                WindowManager.LayoutParams layoutParams2 = Objects.requireNonNull(campusChooseDialog.getWindow()).getAttributes();
+                layoutParams2.width = (int)(widthPixels);
+                campusChooseDialog.getWindow().setAttributes(layoutParams2);
                 break;
             default:
         }
@@ -249,5 +270,24 @@ public class SettingActivity extends BaseActivity implements
         timeTableColorChooseDialog.setCanceledOnTouchOutside(true);
         Objects.requireNonNull(timeTableColorChooseDialog.getWindow()).setGravity(Gravity.BOTTOM);
         timeTableColorChooseDialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
+
+        campusChooseDialog = new CampusChooseDialog(context, R.style.BottomDialog, new TimeTableRemindIntervalDialog.MyDialogListener() {
+            @Override
+            public void onClick(View view) {
+                campusChooseDialog.dismiss();
+                if ("校本部".contentEquals(((TextView) view).getText())) {
+                    getSharedPreferences("myspl", Context.MODE_PRIVATE).edit().putInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 0).apply();
+                }else {
+                    getSharedPreferences("myspl", Context.MODE_PRIVATE).edit().putInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 1).apply();
+                }
+                setCampusName();
+
+                TimeTableAlarmSetting.cancelTimeTableAlarm(context, UserInformation.currentTimeTableList);
+                TimeTableAlarmSetting.createTimeTableAlarm(context, UserInformation.currentTimeTableList);
+            }
+        });
+        campusChooseDialog.setCanceledOnTouchOutside(true);
+        Objects.requireNonNull(campusChooseDialog.getWindow()).setGravity(Gravity.BOTTOM);
+        campusChooseDialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
     }
 }

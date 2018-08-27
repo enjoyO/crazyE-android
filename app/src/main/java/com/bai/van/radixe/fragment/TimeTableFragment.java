@@ -97,6 +97,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
     private Typeface typefaceOrchid;
     private TextView currentWeekChooseTextView;
     private TextView currentWeekTextView, firstWeekTextView;
+    private TextView knobTimeDis[];
 
     private List<List<TimeTableInf>> chooseTimetable;
 
@@ -180,6 +181,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
     }
 
     private void initialTimeTable(List<List<TimeTableInf>> timeTableList) {
+        loadKnobTimeDis();
         weekDisplayTextView.setText("第".concat(currentWeekNo + "周"));
         MainActivity.mMainThreadPoolExecutor.execute(new Runnable() {
             @Override
@@ -305,6 +307,11 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             public void run() {
                 if ("".equals(UserInformation.currentTerm)) {
                     GradesRequest.postRequestCurrentTerm();
+                    String currentTermCharTemp = Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                            .getString(Entry.SharedPreferencesEntry.CURRENT_TERM, "");
+                    if (!UserInformation.currentTermChar.equals(currentTermCharTemp)) {
+                        TimeTableSqliteHandle.clearTable(getActivity());
+                    }
                 }
 
                 if ("".equals(UserInformation.currentTerm)) {
@@ -432,6 +439,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
         LinearLayout[] weekLinearLayouts = new LinearLayout[7];
         TextView[] weekDateTextViews = new TextView[7];
         weekDisplayLayout = new RelativeLayout[7];
+        knobTimeDis = new TextView[12];
 
         TextView weekMonthTextView = (TextView) view.findViewById(R.id.weekMonth);
         weekLinearLayouts[0] = (LinearLayout) view.findViewById(R.id.weekLayout0);
@@ -458,6 +466,19 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
         weekDisplayLayout[5] = (RelativeLayout) view.findViewById(R.id.weekDisplayLayout5);
         weekDisplayLayout[6] = (RelativeLayout) view.findViewById(R.id.weekDisplayLayout6);
 
+        knobTimeDis[0] = view.findViewById(R.id.knob_time_dis_1);
+        knobTimeDis[1] = view.findViewById(R.id.knob_time_dis_2);
+        knobTimeDis[2] = view.findViewById(R.id.knob_time_dis_3);
+        knobTimeDis[3] = view.findViewById(R.id.knob_time_dis_4);
+        knobTimeDis[4] = view.findViewById(R.id.knob_time_dis_5);
+        knobTimeDis[5] = view.findViewById(R.id.knob_time_dis_6);
+        knobTimeDis[6] = view.findViewById(R.id.knob_time_dis_7);
+        knobTimeDis[7] = view.findViewById(R.id.knob_time_dis_8);
+        knobTimeDis[8] = view.findViewById(R.id.knob_time_dis_9);
+        knobTimeDis[9] = view.findViewById(R.id.knob_time_dis_10);
+        knobTimeDis[10] = view.findViewById(R.id.knob_time_dis_11);
+        knobTimeDis[11] = view.findViewById(R.id.knob_time_dis_12);
+
         Calendar calendarNow = Calendar.getInstance();
         int week = calendarNow.get(Calendar.DAY_OF_WEEK);
         weekMonthTextView.setText(String.format("%d月", calendarNow.get(Calendar.MONTH) + 1));
@@ -478,7 +499,21 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 Animation.ZORDER_NORMAL, 0.0f, Animation.ZORDER_NORMAL,
                 -1.0f);
         mHideAnimation.setDuration(500);
+    }
 
+    private void loadKnobTimeDis() {
+        int campus = Objects.requireNonNull(getActivity()).getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                .getInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 1);
+
+        if (campus == 1) {
+            for (int i = 0; i < knobTimeDis.length; i++) {
+                knobTimeDis[i].setText(ConstantValues.TIME_TIME_TABLE.get(i + 1));
+            }
+        }else {
+            for (int i = 0; i < knobTimeDis.length; i++) {
+                knobTimeDis[i].setText(ConstantValues.TIME_TIME_TABLE_GD.get(i + 1));
+            }
+        }
     }
 
     private void loadWeekChooseView() {

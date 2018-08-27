@@ -81,7 +81,7 @@ public class TimeTableItemDetailActivity extends Activity {
     private void displayInf(){
         nameText.setText(SharedData.timeTableInf.className);
         locationText.setText("null".equals(SharedData.timeTableInf.address) ? ConstantValues.NO_DATA_TEXT : SharedData.timeTableInf.address);
-        weekText.setText("周" + ConstantValues.DAY_IN_WEEK_CHAR.get(week) + " " + SharedData.timeTableInf.minKnob + "-" + SharedData.timeTableInf.maxKnob + "节");
+        weekText.setText("周" + ConstantValues.DAY_IN_WEEK_CHAR.get(SharedData.timeTableInf.dayInWeek - 1) + " " + SharedData.timeTableInf.minKnob + "-" + SharedData.timeTableInf.maxKnob + "节");
         ideaText.setText("null".equals(SharedData.timeTableInf.teacher) ? ConstantValues.NO_DATA_TEXT : SharedData.timeTableInf.teacher);
         classNo.setText(SharedData.timeTableInf.classNo);
     }

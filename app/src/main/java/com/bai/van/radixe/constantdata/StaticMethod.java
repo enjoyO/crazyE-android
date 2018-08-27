@@ -93,6 +93,7 @@ public class StaticMethod {
             }
         }catch (ArrayIndexOutOfBoundsException e){
             e.printStackTrace();
+            resultStr = semesterChar;
         }
 
         return resultStr;

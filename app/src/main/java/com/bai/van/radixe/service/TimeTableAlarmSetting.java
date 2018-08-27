@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.TimeZone;
 
 /**
@@ -49,7 +50,8 @@ public class TimeTableAlarmSetting {
 
         int remindInterval = context.getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
                 .getInt(Entry.SharedPreferencesEntry.ALARM_REMIND_TIME_INTERVAL, 15);
-
+        int campus = context.getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                .getInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 1);
         try {
             for (int i = 0; i < 7; i++) {
                 for (int j = 0; j < timeTableList.get(i).size(); j++) {
@@ -69,8 +71,13 @@ public class TimeTableAlarmSetting {
                     calendar.set(Calendar.SECOND, 0);
                     calendar.set(Calendar.MILLISECOND, 0);
                     calendar.add(Calendar.DAY_OF_MONTH, i);
-                    calendar.set(Calendar.HOUR_OF_DAY, ConstantValues.HOUR_TIME_TABLE.get(timeTableInf.minKnob));
-                    calendar.set(Calendar.MINUTE, ConstantValues.MINUTE_TIME_TABLE.get(timeTableInf.minKnob));
+                    if (campus == 1) {
+                        calendar.set(Calendar.HOUR_OF_DAY, ConstantValues.HOUR_TIME_TABLE.get(timeTableInf.minKnob));
+                        calendar.set(Calendar.MINUTE, ConstantValues.MINUTE_TIME_TABLE.get(timeTableInf.minKnob));
+                    }else {
+                        calendar.set(Calendar.HOUR_OF_DAY, ConstantValues.HOUR_TIME_TABLE_GD.get(timeTableInf.minKnob));
+                        calendar.set(Calendar.MINUTE, ConstantValues.MINUTE_TIME_TABLE_GD.get(timeTableInf.minKnob));
+                    }
                     calendar.add(Calendar.MINUTE, -remindInterval);
 //                    calendar.add(Calendar.MINUTE, -66);
 

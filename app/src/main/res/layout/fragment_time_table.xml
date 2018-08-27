@@ -329,6 +329,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="08:30"
@@ -362,6 +363,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_2"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="09:25"
@@ -394,6 +396,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_3"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="10:30"
@@ -426,6 +429,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_4"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="11:25"
@@ -458,6 +462,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_5"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="14:00"
@@ -490,6 +495,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_6"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="14:55"
@@ -522,6 +528,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_7"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="16:00"
@@ -554,6 +561,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_8"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="16:55"
@@ -586,6 +594,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_9"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="19:00"
@@ -618,6 +627,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_10"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="19:55"
@@ -650,6 +660,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_11"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="21:00"
@@ -682,6 +693,7 @@
                                         android:gravity="center_horizontal"
                                         android:textColor="@color/time_table_text"/>
                                     <TextView
+                                        android:id="@+id/knob_time_dis_12"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="21:55"

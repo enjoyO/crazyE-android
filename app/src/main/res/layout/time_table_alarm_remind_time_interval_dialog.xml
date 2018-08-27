@@ -19,6 +19,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/tree_poppy"/>
             <TextView
+                android:id="@+id/dialog_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

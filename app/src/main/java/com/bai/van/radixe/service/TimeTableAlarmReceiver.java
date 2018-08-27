@@ -22,6 +22,7 @@ import com.bai.van.radixe.entry.Entry;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author van
@@ -84,6 +85,9 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
 
             String isThisWeek = "[非当前周] ";
 
+            int campus = context.getSharedPreferences(Entry.SharedPreferencesEntry.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                    .getInt(Entry.SharedPreferencesEntry.CAMPUS_TYPE, 1);
+
             if (StaticMethod.isCurrentWeek(currentWeekNo, weekStr)) {
                 // 当前周
                 isThisWeek = "[当前周] ";
@@ -125,9 +129,15 @@ public class TimeTableAlarmReceiver extends BroadcastReceiver {
                 builder.setNumber(3);
                 builder.setContentTitle(intent.getStringExtra("courseName"));
 
-                builder.setContentText(ConstantValues.TIME_TIME_TABLE.get(intent.getIntExtra("minKnob", 0)).concat("-")
-                        .concat(ConstantValues.TIME_FIN_TIME_TABLE.get(intent.getIntExtra("maxKnob", 0)))
-                        .concat("  ").concat(intent.getStringExtra("courseAdd")));
+                if (campus == 1) {
+                    builder.setContentText(ConstantValues.TIME_TIME_TABLE.get(intent.getIntExtra("minKnob", 0)).concat("-")
+                            .concat(ConstantValues.TIME_FIN_TIME_TABLE.get(intent.getIntExtra("maxKnob", 0)))
+                            .concat("  ").concat(intent.getStringExtra("courseAdd")));
+                }else {
+                    builder.setContentText(ConstantValues.TIME_TIME_TABLE_GD.get(intent.getIntExtra("minKnob", 0)).concat("-")
+                            .concat(ConstantValues.TIME_FIN_TIME_TABLE_GD.get(intent.getIntExtra("maxKnob", 0)))
+                            .concat("  ").concat(intent.getStringExtra("courseAdd")));
+                }
 
                 if (mNotificationManager != null) {
                     mNotificationManager.notify(intent.getIntExtra("requestCode", 0), builder.build());

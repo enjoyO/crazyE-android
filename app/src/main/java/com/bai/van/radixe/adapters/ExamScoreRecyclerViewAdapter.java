@@ -95,9 +95,9 @@ public class ExamScoreRecyclerViewAdapter extends RecyclerView.Adapter{
                     tempScore += Float.parseFloat(examScoreInf.examCredit) * Float.parseFloat(examScoreInf.examScore);
                 }
                 examScoreRecyclerViewHolder.examHeaderSemester.setText("结果");
-                examScoreRecyclerViewHolder.examHeaderCount.setText("GPA: " + temp/credit);
+                examScoreRecyclerViewHolder.examHeaderCount.setText("GPA: ".concat(String.format("%.5f", temp/credit)));
                 examScoreRecyclerViewHolder.examHeaderCredit.setText("总学分: " + credit);
-                examScoreRecyclerViewHolder.examHeaderScore.setText("加权平均成绩: " + tempScore/credit);
+                examScoreRecyclerViewHolder.examHeaderScore.setText("加权平均成绩: ".concat(String.format("%.3f", tempScore/credit)));
 
                 examScoreRecyclerViewHolder.examHeaderScore.setVisibility(View.VISIBLE);
 

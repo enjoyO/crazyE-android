@@ -49,7 +49,6 @@ public class TimeTableColorChooseDialog extends Dialog implements View.OnClickLi
 
     }
 
-
     @Override
     public void onClick(View view) {
         listener.onClick(view);

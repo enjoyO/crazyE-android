@@ -59,6 +59,36 @@ public class ConstantValues {
         put(11, 0);
         put(12, 55);
     }};
+
+    public final static HashMap<Integer, Integer> HOUR_TIME_TABLE_GD = new HashMap<Integer, Integer>(){{
+        put(1, 8);
+        put(2, 8);
+        put(3, 10);
+        put(4, 10);
+        put(5, 14);
+        put(6, 14);
+        put(7, 15);
+        put(8, 16);
+        put(9, 19);
+        put(10, 20);
+        put(11, 21);
+        put(12, 22);
+    }};
+    public final static HashMap<Integer, Integer> MINUTE_TIME_TABLE_GD = new HashMap<Integer, Integer>(){{
+        put(1, 0);
+        put(2, 55);
+        put(3, 0);
+        put(4, 55);
+        put(5, 0);
+        put(6, 55);
+        put(7, 50);
+        put(8, 45);
+        put(9, 30);
+        put(10, 25);
+        put(11, 20);
+        put(12, 15);
+    }};
+
     public final static HashMap<Integer, String> TIME_TIME_TABLE = new HashMap<Integer, String>(){{
         put(0, "");
         put(1, "08:30");
@@ -89,6 +119,42 @@ public class ConstantValues {
         put(11, "21:45");
         put(12, "22:40");
     }};
+
+    public final static HashMap<Integer, String> TIME_TIME_TABLE_GD = new HashMap<Integer, String>(){{
+        put(0, "");
+        put(1, "08:00");
+        put(2, "08:55");
+        put(3, "10:00");
+        put(4, "10:55");
+        put(5, "14:00");
+        put(6, "14:55");
+        put(7, "15:50");
+        put(8, "16:45");
+        put(9, "19:30");
+        put(10, "20:25");
+        put(11, "21:20");
+        put(12, "22:15");
+    }};
+    public final static HashMap<Integer, String> TIME_FIN_TIME_TABLE_GD = new HashMap<Integer, String>(){{
+        put(0, "");
+        put(1, "08:45");
+        put(2, "09:40");
+        put(3, "10:45");
+        put(4, "11:40");
+        put(5, "14:45");
+        put(6, "15:40");
+        put(7, "16:35");
+        put(8, "17:30");
+        put(9, "20:15");
+        put(10, "21:10");
+        put(11, "22:05");
+        put(12, "23:00");
+    }};
+
+
+
+
+
     public static final int REQUEST_INF_FAILED = 302;
 
     public static final String TIME_TABLE_ALARM_ACTION = "com.bai.van.radixe.service.TimeTableAlarmReceiver";

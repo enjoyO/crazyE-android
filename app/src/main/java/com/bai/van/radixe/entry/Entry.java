@@ -36,5 +36,6 @@ public class Entry {
         public static final String CURRENT_TERM = "currentTerm";
         public static final String USER_STA_YEAR = "userStaYear";
         public static final String TIME_TABLE_COLOR_TYPE = "timeTAbleColorType";
+        public static final String CAMPUS_TYPE = "campusType";
     }
 }
